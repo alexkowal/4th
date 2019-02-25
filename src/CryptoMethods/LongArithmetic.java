@@ -69,7 +69,7 @@ public class LongArithmetic {
         return b.toString();
     }
 
-    static String substract(String u, String v) {
+    static String subtract(String u, String v) {
         String a = u;
         String result = "";
 
@@ -157,7 +157,7 @@ public class LongArithmetic {
                 System.out.println("WRONG INPUT.");
                 a = null;
                 b = null;
-            } else if (substract(a, b) == "") {
+            } else if (subtract(a, b) == "") {
                 System.out.println("WRONG INPUT.");
                 a = null;
                 b = null;
@@ -165,7 +165,7 @@ public class LongArithmetic {
                 break;
         }
         System.out.println(a + " + " + b + " = " + add(a, b));
-        System.out.println(a + " - " + b + " = " + substract(a, b));
+        System.out.println(a + " - " + b + " = " + subtract(a, b));
 
 
     }
