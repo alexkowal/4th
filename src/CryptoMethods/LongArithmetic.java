@@ -162,7 +162,7 @@ public class LongArithmetic {
                 break;
         }
         System.out.println(a + " + " + b + " = " + add(a, b));
-        //System.out.println(substract(a, b));
+        System.out.println(substract(a, b));
 
     }
 }
