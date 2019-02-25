@@ -70,13 +70,8 @@ public class LongArithmetic {
     }
 
     static String substract(String u, String v) {
+        String a = u;
         String result = "";
-        /*if (u.length() < v.length()) {
-            String temp = u;
-            u = v;
-            v = temp;
-        }
-        */
 
         boolean minus = false;
 
@@ -96,41 +91,43 @@ public class LongArithmetic {
             u = normalize(u, v.length());
 
         }
-
         int n = max(u.length(), v.length());
         int k = 0;
 
-
-        // for (int j = n - 1; j >= 0; j--) {
         for (int j = n - 1; j >= 0; j--) {
+            boolean flag = false;
             int w = (Integer.parseInt(String.valueOf(u.charAt(j))) - Integer.parseInt(String.valueOf(v.charAt(j))) + k) % b;
             if (w < 0) {
-                if (j > 0) {
-                    StringBuilder t = new StringBuilder();
-                    t.append(u);
-                    t.setCharAt(j - 1, (char) (t.charAt(j - 1) - 1));
-                    if (t.charAt(j - 1) == '/')
-                        t.setCharAt(j - 1, '9');
-                    u = t.toString();
 
-                }
-                if (j == 0) {
-                    StringBuilder t = new StringBuilder();
-                    t.append(u);
-                    t.setCharAt(j, (char) (t.charAt(j) - 1));
-                    if (t.charAt(j) == '/')
-                        t.setCharAt(j - 1, '9');
-                    u = t.toString();
+                if (j > 0) {
+                    int i = 1;
+                    while (i <= j) {
+                        StringBuilder t = new StringBuilder();
+                        t.append(u);
+                        if (t.charAt(j - i) != '0') {
+                            t.setCharAt(j - i, (char) (t.charAt(j - i) - 1));
+                            u = t.toString();
+                            flag = true;
+                            break;
+                        } else {
+                            i++;
+
+
+                        }
+                        //u = t.toString();
+                    }
                 }
                 w = (Integer.parseInt(String.valueOf(u.charAt(j))) + 10 - Integer.parseInt(String.valueOf(v.charAt(j))) + k) % b;
 
-            }
+
+            } else flag = true;
 
             k = (Integer.parseInt(String.valueOf(u.charAt(j))) - Integer.parseInt(String.valueOf(v.charAt(j))) + k) / b;
-            result += w;
+            if (flag)
+                result += w;
         }
-        if (minus)
-            result += '-';
+
+
         StringBuilder b = new StringBuilder(result);
         b.reverse();
 
@@ -139,8 +136,11 @@ public class LongArithmetic {
                 b.deleteCharAt(i--);
             } else break;
         }
+        result = b.toString();
 
-        return b.toString();
+        if (!a.equals(add(result, v)))
+            return "";
+        return result;
     }
 
 
@@ -148,7 +148,6 @@ public class LongArithmetic {
 
         String a, b;
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
         while (true) {
             System.out.println("Enter a");
             a = br.readLine();
@@ -158,11 +157,16 @@ public class LongArithmetic {
                 System.out.println("WRONG INPUT.");
                 a = null;
                 b = null;
+            } else if (substract(a, b) == "") {
+                System.out.println("WRONG INPUT.");
+                a = null;
+                b = null;
             } else
                 break;
         }
         System.out.println(a + " + " + b + " = " + add(a, b));
-        System.out.println(substract(a, b));
+        System.out.println(a + " - " + b + " = " + substract(a, b));
+
 
     }
 }
