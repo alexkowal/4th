@@ -5,7 +5,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.nio.file.attribute.FileTime;
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -23,6 +22,16 @@ public class Backuper implements Serializable {
         return val.reverse().toString();
     }
 
+    static String getExtension(String name) {
+        String extension = "";
+
+        int i = name.lastIndexOf('.');
+        if (i > 0) {
+            extension = name.substring(i + 1);
+        }
+        return extension;
+    }
+
     ArrayList<MyFile> findNewFiles(File folder) throws IOException {
         ArrayList<MyFile> filesInFolder = new ArrayList<>();
         createBackup(folder, filesInFolder);
@@ -31,12 +40,13 @@ public class Backuper implements Serializable {
                 filesInFolder.remove(filesInFolder.get(i));
                 i--;
             }
+
         }
 
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
         System.out.println("Новые файлы: " + filesInFolder.size());
         for (MyFile myFile : filesInFolder) {
-            System.out.println(myFile.getName() + " " + sdf.format((myFile.getCreateTime())));
+            System.out.println(myFile.getPath());
 
         }
         return filesInFolder;
@@ -51,12 +61,16 @@ public class Backuper implements Serializable {
                 result.add(list.get(i));
             }
         }
+        for (int i = 0; i < result.size(); i++)
+            if (!result.get(i).getPath().contains(folder.getPath())) {
+                result.remove(result.get(i));
+                i--;
+            }
 
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
         System.out.println("Удаленные файлы: " + result.size());
         for (MyFile myFile : result) {
-            System.out.println(myFile.getFileKey() + " " + myFile.getName() + " " + sdf.format((myFile.getCreateTime())));
-
+            System.out.println(myFile.getPath());
         }
         return result;
     }
@@ -67,47 +81,67 @@ public class Backuper implements Serializable {
         createBackup(folder, filesInFolder);
         for (int i = 0; i < list.size(); i++) {
             if (filesInFolder.contains(list.get(i))) {
-                if (!filesInFolder.get(filesInFolder.indexOf(list.get(i))).getSize().equals(list.get(i).getSize())
-                        || !filesInFolder.get(filesInFolder.indexOf(list.get(i))).getLastModified().equals(list.get(i).getLastModified())) {
+                int hash = list.get(i).hashCode();
 
+                if (filesInFolder.get(filesInFolder.indexOf(list.get(i))).hashCode() != hash) {
                     result.add(list.get(i));
-                    //System.out.println(filesInFolder.get(filesInFolder.indexOf(list.get(i))).getSize() + " " + list.get(i).getSize());
                 }
             }
         }
+        for (int i = 0; i < result.size(); i++)
+            if (!result.get(i).getPath().contains(folder.getPath())) {
+                result.remove(result.get(i));
+                i--;
+            }
+
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
         System.out.println("Измененные файлы: " + result.size());
         for (MyFile myFile : result) {
-            System.out.println(myFile.getName() + " " + sdf.format((myFile.getCreateTime())));
-
+            if (!myFile.getSize().equals(list.get(list.indexOf(myFile)).getSize()))
+                System.out.println(myFile.getPath() + " Поменял размер c" + list.get(list.indexOf(myFile)).getSize() + " на "
+                        + myFile.getSize());
+            else
+                System.out.println(myFile.getPath() + " поменял хэш");
         }
         return result;
     }
 
-
     public void createBackup(File folder, ArrayList<MyFile> list) throws IOException {
         File[] folderEntries = folder.listFiles();
-        for (File entry : folderEntries) {
-            if (entry.isDirectory()) {
-                createBackup(entry, list);
-                continue;
-            } else {
-                Path file = entry.toPath();
-                MyFile f = new MyFile();
-                BasicFileAttributes attr = Files.readAttributes(file, BasicFileAttributes.class);
-                f.setName(file.getFileName().toString());
-                FileTime time = attr.creationTime();
-                Date newDate = new Date(time.toMillis());
-                f.setCreateTime(newDate);
-                f.setSize(attr.size());
 
-                FileTime lastModTIme = attr.creationTime();
-                Date lastModDate = new Date(lastModTIme.toMillis());
-                f.setLastModified(lastModDate);
-                Object ob = attr.fileKey();
-                f.setFileKey(Long.valueOf(getIno(ob)));
-                list.add(f);
+        try {
+            for (File entry : folderEntries) {
+
+                if (entry.isDirectory()) {
+                    createBackup(entry, list);
+                    continue;
+                } else {
+                    Path file = entry.toPath();
+                    MyFile f = new MyFile();
+                    BasicFileAttributes attr = Files.readAttributes(file, BasicFileAttributes.class);
+                    f.setName(file.getFileName().toString());
+                    FileTime time = attr.creationTime();
+                    Date newDate = new Date(time.toMillis());
+                    f.setCreateTime(newDate);
+                    f.setSize(attr.size());
+                    f.setPath(entry.getAbsolutePath());
+
+
+                    FileTime lastModTIme = attr.creationTime();
+                    Date lastModDate = new Date(lastModTIme.toMillis());
+                    f.setLastModified(lastModDate);
+                    Object ob = attr.fileKey();
+                    f.setFileKey(Long.valueOf(getIno(ob)));
+                    list.add(f);
+                    f.setHash(file.hashCode());
+                    f.setExtension(getExtension(file.getFileName().toString()));
+
+                }
             }
+        } catch (NullPointerException ex) {
+            // System.out.println("NullPointerEx");
+        } catch (Exception e) {
+            //   System.out.println("Exception");
         }
     }
 
@@ -137,11 +171,12 @@ public class Backuper implements Serializable {
             Backuper b = (Backuper) is.readObject();
             ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream("tmp.txt"));
             os.writeObject(b);
-            b.inspect(new File("/Users/aleksandr/4 курс 2 семестр"));
+            b.inspect(new File("/Users/aleksandr/4 курс 2 семестр/Матлаб"));
 
             ///Users/aleksandr/bearings
             ///Users/aleksandr/4 курс 2 семестр
             ///Users/aleksandr/4 курс 2 семестр/Матлаб
+            //
         }
     }
 }

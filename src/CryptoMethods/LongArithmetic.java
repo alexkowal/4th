@@ -139,8 +139,45 @@ public class LongArithmetic {
         result = b.toString();
 
         if (!a.equals(add(result, v)))
-            return "";
+            return "WRONG INPUT: a < b";
         return result;
+    }
+
+    static String mul(String u, String v) {
+
+        int count = 0;
+        StringBuilder c = new StringBuilder();
+        for (int i = 0; i < u.length() + v.length(); i++)
+            c.append(0);
+
+        StringBuilder t = new StringBuilder(u);
+        t = t.reverse();
+        u = t.toString();
+        t = new StringBuilder(v);
+        v = t.reverse().toString();
+
+        int carry = 0;
+        for (int i = 0; i < u.length(); i++)
+            for (int j = 0; j < v.length(); j++) {
+
+                int temp = Character.getNumericValue(c.charAt(i + j))
+                        + Character.getNumericValue(u.charAt(i))
+                        * ((j < v.length() ? Character.getNumericValue(v.charAt(j)) : 0)) + carry;
+                c.setCharAt(i + j, Character.forDigit(temp % b, b));
+                carry = (temp / b);
+                if (carry != 0)
+                    count++;
+            }
+        if (carry != 0) {
+            // count++;
+            //c.setCharAt(c.length()-1,Character.forDigit(carry,b));
+            c.setCharAt(c.length() - 1, Character.forDigit(carry, b));
+        }
+        while (c.length() > max(count,1) && c.charAt(c.length() - 1) == '0')
+            c.deleteCharAt(c.length() - 1);
+
+        //System.out.println(c.toString());
+        return c.reverse().toString();
     }
 
 
@@ -149,24 +186,32 @@ public class LongArithmetic {
         String a, b;
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         while (true) {
-            System.out.println("Enter a");
-            a = br.readLine();
-            System.out.println("Enter b");
-            b = br.readLine();
-            if (!validate(a) || !validate(b)) {
-                System.out.println("WRONG INPUT.");
-                a = null;
-                b = null;
-            } else if (subtract(a, b) == "") {
-                System.out.println("WRONG INPUT.");
-                a = null;
-                b = null;
-            } else
-                break;
-        }
-        System.out.println(a + " + " + b + " = " + add(a, b));
-        System.out.println(a + " - " + b + " = " + subtract(a, b));
+            while (true) {
+                System.out.println("Enter a");
+                a = br.readLine();
+                System.out.println("Enter b");
+                b = br.readLine();
+                if (!validate(a) || !validate(b)) {
+                    System.out.println("WRONG INPUT.");
+                    a = null;
+                    b = null;
+                }
+                 /*else if (subtract(a, b) == "") {
+                    System.out.println("WRONG INPUT.");
+                    a = null;
+                    b = null;
+                }*/
 
+
+                else
+                    break;
+            }
+
+            System.out.println(a + " + " + b + " = " + add(a, b));
+            System.out.println(a + " - " + b + " = " + subtract(a, b));
+            System.out.println(a + " * " + b + " = " + mul(a, b));
+
+        }
 
     }
 }
