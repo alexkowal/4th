@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c7cc09cd-c6f2-4dea-a13f-7193627f4d7f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/RandomGenerator/AdditiveMethod.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/RandomGenerator/LFSR.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/RandomGenerator/LinearSequence.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/RandomGenerator/Param5.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/4th/CryptoMethods/LongArithmetic.class" afterPath="$PROJECT_DIR$/out/production/4th/CryptoMethods/LongArithmetic.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/4th/rogrammDefender/Backuper.class" afterPath="$PROJECT_DIR$/out/production/4th/rogrammDefender/Backuper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/4th/rogrammDefender/MyFile.class" afterPath="$PROJECT_DIR$/out/production/4th/rogrammDefender/MyFile.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CryptoMethods/LongArithmetic.java" afterPath="$PROJECT_DIR$/src/CryptoMethods/LongArithmetic.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/rogrammDefender/Backuper.java" afterPath="$PROJECT_DIR$/src/rogrammDefender/Backuper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/rogrammDefender/MyFile.java" afterPath="$PROJECT_DIR$/src/rogrammDefender/MyFile.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp.txt" afterPath="$PROJECT_DIR$/tmp.txt" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -30,82 +22,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Backuper.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Backuper.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/rogrammDefender/Backuper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="615">
-              <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+            <state relative-caret-position="314">
+              <caret line="136" column="47" lean-forward="true" selection-start-line="136" selection-start-column="47" selection-end-line="136" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#getIno#0;class#Backuper#0" expanded="false" />
                 <element signature="method#getExtension#0;class#Backuper#0" expanded="false" />
                 <element signature="method#findNewFiles#0;class#Backuper#0" expanded="false" />
                 <element signature="method#inspect#0;class#Backuper#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LinearSequence.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/RandomGenerator/LinearSequence.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="40" column="35" lean-forward="false" selection-start-line="40" selection-start-column="35" selection-end-line="40" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AdditiveMethod.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/RandomGenerator/AdditiveMethod.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="16" lean-forward="false" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Param5.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/RandomGenerator/Param5.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="990">
-              <caret line="66" column="57" lean-forward="false" selection-start-line="66" selection-start-column="57" selection-end-line="66" selection-end-column="57" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LFSR.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/RandomGenerator/LFSR.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LongArithmetic.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CryptoMethods/LongArithmetic.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1545">
-              <caret line="141" column="38" lean-forward="false" selection-start-line="141" selection-start-column="38" selection-end-line="141" selection-end-column="38" />
-              <folding>
-                <element signature="method#normalize#0;class#LongArithmetic#0" expanded="false" />
-                <element signature="method#validate#0;class#LongArithmetic#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MyFile.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/rogrammDefender/MyFile.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1110">
-              <caret line="105" column="8" lean-forward="false" selection-start-line="105" selection-start-column="8" selection-end-line="105" selection-end-column="8" />
-              <folding>
-                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -146,12 +73,12 @@
         <option value="$PROJECT_DIR$/src/rogrammDefender/MyFile.java" />
         <option value="$PROJECT_DIR$/src/CryptoMethods/LongArithmetic.java" />
         <option value="$PROJECT_DIR$/src/programmDefender/Backuper.java" />
-        <option value="$PROJECT_DIR$/src/rogrammDefender/Backuper.java" />
         <option value="$PROJECT_DIR$/src/RandomGenerator/LinearSequence.java" />
         <option value="$PROJECT_DIR$/src/RandomGenerator/AdditiveMethod.java" />
         <option value="$PROJECT_DIR$/src/RandomGenerator/pa.java" />
         <option value="$PROJECT_DIR$/src/RandomGenerator/Param5.java" />
         <option value="$PROJECT_DIR$/src/RandomGenerator/LFSR.java" />
+        <option value="$PROJECT_DIR$/src/rogrammDefender/Backuper.java" />
       </list>
     </option>
   </component>
@@ -196,6 +123,12 @@
               <item name="4th" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="4th" type="b2602c69:ProjectViewProjectNode" />
+              <item name="4th" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="rogrammDefender" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -223,7 +156,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Param5">
+  <component name="RunManager" selected="Application.Backuper">
     <configuration name="AdditiveMethod" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -343,10 +276,10 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.Param5" />
-        <item index="1" class="java.lang.String" itemvalue="Application.AdditiveMethod" />
-        <item index="2" class="java.lang.String" itemvalue="Application.LinearSequence" />
-        <item index="3" class="java.lang.String" itemvalue="Application.Backuper" />
+        <item index="0" class="java.lang.String" itemvalue="Application.Backuper" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Param5" />
+        <item index="2" class="java.lang.String" itemvalue="Application.AdditiveMethod" />
+        <item index="3" class="java.lang.String" itemvalue="Application.LinearSequence" />
         <item index="4" class="java.lang.String" itemvalue="Application.LongArithmetic" />
       </list>
     </recent_temporary>
@@ -376,7 +309,7 @@
       <workItem from="1551875397379" duration="709000" />
       <workItem from="1552119422234" duration="241000" />
       <workItem from="1552124412814" duration="9484000" />
-      <workItem from="1552222548025" duration="36000" />
+      <workItem from="1552222548025" duration="510000" />
     </task>
     <task id="LOCAL-00001" summary="add-operation">
       <created>1551082764157</created>
@@ -413,28 +346,37 @@
       <option name="project" value="LOCAL" />
       <updated>1551430609468</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="backuper">
+      <created>1552222655088</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1552222655088</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49481000" />
+    <option name="totallyTimeSpent" value="49955000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32933334" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32933334" sideWeight="0.525" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28533334" sideWeight="0.475" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28533334" sideWeight="0.475" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -447,7 +389,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32933334" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32933334" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32933334" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -933,20 +874,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/rogrammDefender/Backuper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#getIno#0;class#Backuper#0" expanded="false" />
-            <element signature="method#getExtension#0;class#Backuper#0" expanded="false" />
-            <element signature="method#findNewFiles#0;class#Backuper#0" expanded="false" />
-            <element signature="method#inspect#0;class#Backuper#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/RandomGenerator/LinearSequence.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
@@ -977,6 +904,20 @@
         <state relative-caret-position="75">
           <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/rogrammDefender/Backuper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="136" column="47" lean-forward="true" selection-start-line="136" selection-start-column="47" selection-end-line="136" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#getIno#0;class#Backuper#0" expanded="false" />
+            <element signature="method#getExtension#0;class#Backuper#0" expanded="false" />
+            <element signature="method#findNewFiles#0;class#Backuper#0" expanded="false" />
+            <element signature="method#inspect#0;class#Backuper#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

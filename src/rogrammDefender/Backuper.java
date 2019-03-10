@@ -84,7 +84,7 @@ public class Backuper implements Serializable {
                 int hash = list.get(i).hashCode();
 
                 if (filesInFolder.get(filesInFolder.indexOf(list.get(i))).hashCode() != hash) {
-                    result.add(list.get(i));
+                    result.add(filesInFolder.get(filesInFolder.indexOf(list.get(i))));
                 }
             }
         }
@@ -98,10 +98,10 @@ public class Backuper implements Serializable {
         System.out.println("Измененные файлы: " + result.size());
         for (MyFile myFile : result) {
             if (!myFile.getSize().equals(list.get(list.indexOf(myFile)).getSize()))
-                System.out.println(myFile.getPath() + " Поменял размер c" + list.get(list.indexOf(myFile)).getSize() + " на "
+                System.out.println(myFile.getPath() + " Поменял размер c " + list.get(list.indexOf(myFile)).getSize() + " на "
                         + myFile.getSize());
             else
-                System.out.println(myFile.getPath() + " поменял хэш");
+                System.out.println(myFile.getPath() + " поменял хэш ");
         }
         return result;
     }
@@ -123,17 +123,25 @@ public class Backuper implements Serializable {
                     FileTime time = attr.creationTime();
                     Date newDate = new Date(time.toMillis());
                     f.setCreateTime(newDate);
+
                     f.setSize(attr.size());
+
                     f.setPath(entry.getAbsolutePath());
 
-
                     FileTime lastModTIme = attr.creationTime();
+
                     Date lastModDate = new Date(lastModTIme.toMillis());
+
                     f.setLastModified(lastModDate);
+
                     Object ob = attr.fileKey();
+
                     f.setFileKey(Long.valueOf(getIno(ob)));
+
                     list.add(f);
+
                     f.setHash(file.hashCode());
+
                     f.setExtension(getExtension(file.getFileName().toString()));
 
                 }
