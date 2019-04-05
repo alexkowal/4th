@@ -2,69 +2,72 @@ package RandomGenerator;
 
 import java.util.ArrayList;
 
-public class Param5 {
+public class Param5 extends Generator {
 
-    Integer p;
-    Integer q1;
-    Integer q2;
-    Integer q3;
-    Integer w;
-    ArrayList<Integer> x = new ArrayList<Integer>();
-    Integer n;
+    private Long p;
+    private Long q1;
+    private Long q2;
+    private Long q3;
+    private Long w;
+    private Long a;
+    private ArrayList<Long> res = new ArrayList<>();
 
 
-    public Param5(Integer p, Integer q1, Integer q2, Integer q3, Integer w, ArrayList<Integer> x, Integer n) {
-        this.p = p;
-        this.q1 = q1;
-        this.q2 = q2;
-        this.q3 = q3;
-        this.w = w;
-        this.x = x;
-        this.n = n;
+    public Param5() {
     }
 
-    String toBin(Integer x) {
-        StringBuilder result = new StringBuilder();
-        for (int i = 0; i < w; i++)
-            result.append('0');
-        for (int i = 0; i < w; i++) {
-            if (x % 2 == 0)
-                result.setCharAt(i, '1');
-            x /= 2;
+    public void init() {
+        this.p = parameters.get(0);
+        this.q1 = parameters.get(1);
+        this.q2 = parameters.get(2);
+        this.q3 = parameters.get(3);
+        this.w = parameters.get(4);
+        this.a = parameters.get(5);
+    }
+
+    private ArrayList<Long> toBin(long a, long p) {
+        ArrayList<Long> b = new ArrayList<>();
+        while (a != 0 && p > 0) {
+            b.add(0, a % 2);
+            a /= 2;
+            p--;
         }
-        return String.valueOf(result);
-    }
-
-    String addBin(String x1, String x2) {
-        StringBuilder result = new StringBuilder();
-        for (int i = 0; i < w; i++)
-            result.append('0');
-        for (int i = 0; i < w; i++) {
-            result.setCharAt(i, '1');
-            if (x1.charAt(i) == '1' && x2.charAt(i) == '1')
-                result.setCharAt(i, '0');
-            if (x1.charAt(i) == '0' && x2.charAt(i) == '0')
-                result.setCharAt(i, '0');
+        while (p > 0) {
+            b.add(0, 0L);
+            p--;
         }
-        return result.toString();
+        return b;
     }
 
-    void generate() {
+    public String generate() {
+        init();
+        if (q1 >= p || q1 == 0 || q2 == 0 || q3 == 0 || q2 >= p || q3 >= p || n == 0) {
+            return "Error";
+        }
+        ArrayList<Long> b = toBin(a, p);
         for (int i = 0; i < n; i++) {
-            String temp = toBin(x.get(i + q1));
-            temp = addBin(temp, toBin(x.get(i + q2)));
-            temp = addBin(temp, toBin(x.get(i + q3)));
-            temp = addBin(temp, toBin(x.get(i)));
-            System.out.println(temp);
+            ArrayList<Long> temp = new ArrayList<>();
+            for (int j = 0; j < w; j++) {
+                Long b_f = b.get(b.size() - 1);
+                temp.add(0, b_f);
+
+                Long b_l = (b.get(Math.toIntExact((q1))) ^ b.get(Math.toIntExact(q2)) ^ b.get(Math.toIntExact(q3)));
+
+                for (int l = b.size() - 2; l >= 0; l--)
+                    b.set(l + 1, b.get(l));
+                b.add(0, b_l);
+                b.remove(b.size() - 1);
+
+            }
+            String s = "";
+            for (Long a : temp)
+                s += a;
+            Long t2 = Long.parseLong(s, 2); //% 1000;
+            res.add(t2);
         }
-    }
-
-    public static void main(String[] args) {
-
-        ArrayList<Integer> list = new ArrayList<>();
-        for (int i = 0; i < 100000; i++)
-            list.add(i + 7);
-        Param5 p5 = new Param5(89, 20, 40, 69, 7, list, 10);
-        p5.generate();
+        for (Long re : res) {
+            out.append(re + " ");
+        }
+        return out.toString();
     }
 }

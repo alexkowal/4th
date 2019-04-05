@@ -1,28 +1,30 @@
 package RandomGenerator;
 
-public class AdditiveMethod {
+public class AdditiveMethod extends Generator {
 
     Long x0;
     Long x1;
     Long mod;
 
-    public AdditiveMethod(Long x0, Long x1, Long mod) {
-        this.x0 = x0;
-        this.x1 = x1;
-        this.mod = mod;
+    void initGenerator() {
+        this.x0 = parameters.get(0);
+        this.x1 = parameters.get(1);
+        this.mod = parameters.get(2);
     }
 
-    Long generate() {
-        Long result = (x0 + x1) % mod;
-        x0 = x1;
-        x1 = result;
-        return result;
+    public String generate() {
+        this.initGenerator();
+        for (int i = 0; i < n; i++) {
+            Long result = (x0 + x1) % mod;
+            x0 = x1;
+            x1 = result;
+            out.append(result + " ") ;
+        }
+        return out.toString();
     }
 
+    public AdditiveMethod() {
 
-    public static void main(String[] args) {
-        AdditiveMethod am = new AdditiveMethod(1l, 5l, 31l);
-        for (int i = 0; i < 100; i++)
-            System.out.println(am.generate());
+
     }
 }
