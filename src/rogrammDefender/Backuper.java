@@ -98,8 +98,8 @@ public class Backuper implements Serializable {
         System.out.println("Измененные файлы: " + result.size());
         for (MyFile myFile : result) {
             if (!myFile.getSize().equals(list.get(list.indexOf(myFile)).getSize()))
-                System.out.println(myFile.getPath() + " Поменял размер c " + list.get(list.indexOf(myFile)).getSize() + " на "
-                        + myFile.getSize());
+                System.out.println(myFile.getPath() + " Поменял размер c " + list.get(list.indexOf(myFile)).getSize() + " Б на "
+                        + myFile.getSize() + " Б");
             else
                 System.out.println(myFile.getPath() + " поменял хэш ");
         }
@@ -179,7 +179,7 @@ public class Backuper implements Serializable {
             Backuper b = (Backuper) is.readObject();
             ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream("tmp.txt"));
             os.writeObject(b);
-            b.inspect(new File("/Users/aleksandr/4 курс 2 семестр/Матлаб"));
+            b.inspect(new File("/Users/aleksandr/4 курс 2 семестр"));
 
             ///Users/aleksandr/bearings
             ///Users/aleksandr/4 курс 2 семестр

@@ -62,6 +62,15 @@ public class Starter {
         return n == 0l ? 10000 : n;
     }
 
+    Boolean getHelp(List<String> params) {
+        for (String param : params) {
+            if (param.contains("help")) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     String getFileName(List<String> params) {
         String fileName = "";
         for (String param : params) {
@@ -137,14 +146,18 @@ public class Starter {
             g.fileName = "rnd.txt";
             g.n = s.getCount(params) != 0 ? s.getCount(params) : 10000;
             s.fs = new FileWriter(s.getFileName(params));
+            if (s.getHelp(params)) {
+                g.help();
+                return;
+            }
             if (g.getClass() == NFSR.class) {
                 g.parametersNFSR = s.getParamsNFSR(params);
                 g.initVectorNFSR = s.getInitVectorNFSR(params);
+            } else {
+                g.parameters = s.getParams(params);
+                if (s.getInitVector(params) != null)
+                    g.initVector = s.getInitVector(params);
             }
-
-            g.parameters = s.getParams(params);
-            if (s.getInitVector(params) != null)
-                g.initVector = s.getInitVector(params);
             s.fs.write(g.generate());
         } finally {
             s.fs.close();

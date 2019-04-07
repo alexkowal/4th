@@ -62,12 +62,18 @@ public class Param5 extends Generator {
             String s = "";
             for (Long a : temp)
                 s += a;
-            Long t2 = Long.parseLong(s, 2); //% 1000;
+            Long t2 = Long.parseLong(s, 2);
             res.add(t2);
         }
         for (Long re : res) {
             out.append(re + " ");
         }
         return out.toString();
+    }
+    @Override
+    public String help() {
+        System.out.println("Пример ввода: /g:5p /p: 89 20 40 69 10 1712343232342 /n:10000 /f: random.txt");
+        System.out.println("Введите параметры: p - бит во входном слове, {q1, q2, q3} - отводы, w - бит в полученном слове, a - входное слово");
+        return "";
     }
 }

@@ -18,13 +18,18 @@ public class AdditiveMethod extends Generator {
             Long result = (x0 + x1) % mod;
             x0 = x1;
             x1 = result;
-            out.append(result + " ") ;
+            out.append(result + " ");
         }
         return out.toString();
     }
 
     public AdditiveMethod() {
+    }
 
-
+    @Override
+    public String help() {
+        System.out.println("Пример ввода: /g:add /p:233 147 1391 /n:10000 /f: random.txt ");
+        System.out.println("Введите параметры: X0, X1, Модуль.");
+        return "";
     }
 }

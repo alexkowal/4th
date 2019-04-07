@@ -53,7 +53,6 @@ public class LFSR extends Generator {
                     for (int l = 1; l < initVector.size(); l++) {
                         b_l = b_l ^ (b.get(Math.toIntExact(initVector.get(l))));
                     }
-
                 for (int l = b.size() - 2; l >= 0; l--)
                     b.set(l + 1, b.get(l));
                 b.add(0, b_l);
@@ -68,4 +67,11 @@ public class LFSR extends Generator {
         return out.toString();
     }
 
+    @Override
+    public String help() {
+        System.out.println("Пример ввода: /g:lfsr /p:32 12321321312 /i:20 14 18 /n:10000 /f: random.txt");
+        System.out.println("Введите параметры: p - бит во входном слове, l - p-битное входное слово. ");
+        System.out.println("Введите инициализационный вектор: вектор степеней полинома");
+        return "";
+    }
 }

@@ -14,4 +14,6 @@ public abstract class Generator {
     ArrayList<ArrayList<Long>> initVectorNFSR = new ArrayList<ArrayList<Long>>();
 
     public abstract String generate();
+
+    public abstract String help();
 }

@@ -229,4 +229,10 @@ public class MersenneTwister extends Generator{
 
         return out.toString();
     }
+
+    @Override
+    public String help() {
+        System.out.println();
+        return "";
+    }
 }

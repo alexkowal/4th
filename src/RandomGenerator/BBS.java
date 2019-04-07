@@ -6,7 +6,6 @@ public class BBS extends Generator {
 
     public BBS() {
     }
-
     long w;
     BigInteger p, q, x = BigInteger.ZERO;
     BigInteger e = BigInteger.valueOf(2);
@@ -18,7 +17,6 @@ public class BBS extends Generator {
         this.x = BigInteger.valueOf(parameters.get(2));
         this.w = (parameters.get(3));
         N = p.multiply(q);
-
     }
 
     @Override
@@ -34,5 +32,13 @@ public class BBS extends Generator {
             out.append(r + " ");
         }
         return out.toString();
+    }
+
+    @Override
+    public String help() {
+        System.out.println("Пример ввода: /g:bbs /p: 20998787 20999999 12345 32 /n:10000 /f: random.txt");
+        System.out.println("Введите параметры: p, q, x, w, где p, q - простые числа сравнимые с 3 по модулю 4, ");
+        System.out.println("x - взаимнопростое с p * q, w - бит в выходном слове");
+        return "";
     }
 }

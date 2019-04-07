@@ -7,6 +7,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
 
+import static java.lang.Integer.lowestOneBit;
 import static java.lang.Integer.max;
 import static java.lang.Integer.min;
 
@@ -22,6 +23,12 @@ public class LongArithmetic {
             u = temp.toString();
         }
         return u.toString();
+    }
+
+    static String reverce(String u) {
+        StringBuilder b = new StringBuilder(u);
+        b = b.reverse();
+        return b.toString();
     }
 
     static boolean validate(String s) {
@@ -89,11 +96,9 @@ public class LongArithmetic {
         if (u.length() < v.length()) {
             minus = true;
             u = normalize(u, v.length());
-
         }
         int n = max(u.length(), v.length());
         int k = 0;
-
         for (int j = n - 1; j >= 0; j--) {
             boolean flag = false;
             int w = (Integer.parseInt(String.valueOf(u.charAt(j))) - Integer.parseInt(String.valueOf(v.charAt(j))) + k) % b;
@@ -111,17 +116,12 @@ public class LongArithmetic {
                             break;
                         } else {
                             i++;
-
-
                         }
                         //u = t.toString();
                     }
                 }
                 w = (Integer.parseInt(String.valueOf(u.charAt(j))) + 10 - Integer.parseInt(String.valueOf(v.charAt(j))) + k) % b;
-
-
             } else flag = true;
-
             k = (Integer.parseInt(String.valueOf(u.charAt(j))) - Integer.parseInt(String.valueOf(v.charAt(j))) + k) / b;
             if (flag)
                 result += w;
@@ -138,8 +138,8 @@ public class LongArithmetic {
         }
         result = b.toString();
 
-        if (!a.equals(add(result, v)))
-            return "WRONG INPUT: a < b";
+        /*if (!a.equals(add(result, v)))
+            return "WRONG INPUT: a < b";*/
         return result;
     }
 
@@ -163,8 +163,14 @@ public class LongArithmetic {
                 int temp = Character.getNumericValue(c.charAt(i + j))
                         + Character.getNumericValue(u.charAt(i))
                         * ((j < v.length() ? Character.getNumericValue(v.charAt(j)) : 0)) + carry;
-                c.setCharAt(i + j, Character.forDigit(temp % b, b));
-                carry = (temp / b);
+                if (j == v.length() - 1 && i + j != c.length()) {
+                    c.setCharAt(i + j, Character.forDigit(temp % b, b));
+                    c.setCharAt(i + j + 1, Character.forDigit(temp / b, b));
+                    carry = 0;
+                } else {
+                    c.setCharAt(i + j, Character.forDigit(temp % b, b));
+                    carry = (temp / b);
+                }
                 if (carry != 0)
                     count++;
             }
@@ -173,13 +179,51 @@ public class LongArithmetic {
             //c.setCharAt(c.length()-1,Character.forDigit(carry,b));
             c.setCharAt(c.length() - 1, Character.forDigit(carry, b));
         }
-        while (c.length() > max(count,1) && c.charAt(c.length() - 1) == '0')
+        while (c.length() > max(count, 1) && c.charAt(c.length() - 1) == '0')
             c.deleteCharAt(c.length() - 1);
 
         //System.out.println(c.toString());
         return c.reverse().toString();
     }
 
+    static String div(String u, String v) {
+
+        String a = u;
+        String k = v;
+        StringBuilder d = new StringBuilder();
+        d.append(b / Character.getNumericValue(v.charAt(0) + 1));
+        int n = v.length();
+        int m = u.length() - n;
+        u = mul(u, d.toString());
+        v = mul(v, d.toString());
+        if (u.length() <= m + n || d.equals("1"))
+            u = "0" + u;
+        u = reverce(u);
+        v = reverce(v);
+
+        int q = 0, r = 0;
+        for (int j = m; j >= 0; j--) {
+            q = (Character.getNumericValue(u.charAt(j + n)) * b + Character.getNumericValue(u.charAt(j + n - 1))) / Character.getNumericValue(v.charAt(n - 1));
+            r = (Character.getNumericValue(u.charAt(j + n)) * b + Character.getNumericValue(u.charAt(j + n - 1))) % Character.getNumericValue(v.charAt(n - 1));
+
+            if (q == b ||
+                    q * Character.getNumericValue(v.charAt(n - 2)) > b * r + Character.getNumericValue(u.charAt(j + n - 2))) {
+                q--;
+                r += Character.getNumericValue(v.charAt(n - 1));
+            }
+            //НЕТ СТРАННОЙ ПРОВЕРКИ
+
+            String ans = "0";
+
+
+            String temp = u.substring(j, j + n);
+            String res = subtract(temp, mul(String.valueOf(q), v));
+            //    System.out.println(res);
+
+        }
+
+        return u.toString();
+    }
 
     public static void main(String[] args) throws IOException {
 
@@ -195,22 +239,28 @@ public class LongArithmetic {
                     System.out.println("WRONG INPUT.");
                     a = null;
                     b = null;
-                }
-                 /*else if (subtract(a, b) == "") {
+                } else if (subtract(a, b) == "") {
                     System.out.println("WRONG INPUT.");
                     a = null;
                     b = null;
-                }*/
-
-
-                else
+                } else
                     break;
             }
-
-            System.out.println(a + " + " + b + " = " + add(a, b));
+            //System.out.println(a + " + " + b + " = " + add(a, b));
             System.out.println(a + " - " + b + " = " + subtract(a, b));
-            System.out.println(a + " * " + b + " = " + mul(a, b));
+            //System.out.println(a + " * " + b + " = " + mul(a, b));
+            //System.out.println(div(a, b));
 
+           /* String ans = "0";
+            int i = 3;
+            while (i > 0) {
+                a = subtract(a, b);
+                System.out.println(a + " " + b + " " + subtract(a, b));
+                ans = add(ans, "1");
+                i--;
+            }
+            System.out.println("ans = " + ans);
+            */
         }
 
     }
