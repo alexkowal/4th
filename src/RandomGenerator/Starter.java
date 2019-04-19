@@ -34,7 +34,7 @@ public class Starter {
                 g = new NFSR();
                 break;
             case "mt":
-                g = new AdditiveMethod();
+                g = new MersenneTwister();
                 break;
             case "rc4":
                 g = new RC4();

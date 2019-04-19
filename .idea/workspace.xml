@@ -1,24 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c7cc09cd-c6f2-4dea-a13f-7193627f4d7f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/CryptoMethods/Num.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tmp.txt" afterPath="" />
+    <list default="true" id="c7cc09cd-c6f2-4dea-a13f-7193627f4d7f" name="Default" comment="Crypto">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/RandomGenerator/secondTask/Binomial.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/RandomGenerator/secondTask/DistribStarter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/RandomGenerator/secondTask/Distribution.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/RandomGenerator/secondTask/Exponential.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/RandomGenerator/secondTask/Gamma.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/RandomGenerator/secondTask/LogNormal.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/RandomGenerator/secondTask/Logistic.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/RandomGenerator/secondTask/Normal.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/RandomGenerator/secondTask/Standart.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/RandomGenerator/secondTask/Triangle.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/4th/rogrammDefender/Backuper.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/4th/rogrammDefender/MyFile.class" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/rogrammDefender/Backuper.java" afterPath="$PROJECT_DIR$/src/ProgrammDefender/Backuper.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/rogrammDefender/MyFile.java" afterPath="$PROJECT_DIR$/src/ProgrammDefender/MyFile.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/4th/CryptoMethods/LongArithmetic.class" afterPath="$PROJECT_DIR$/out/production/4th/CryptoMethods/LongArithmetic.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CryptoMethods/LongArithmetic.java" afterPath="$PROJECT_DIR$/src/CryptoMethods/LongArithmetic.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/RandomGenerator/AdditiveMethod.java" afterPath="$PROJECT_DIR$/src/RandomGenerator/AdditiveMethod.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/RandomGenerator/BBS.java" afterPath="$PROJECT_DIR$/src/RandomGenerator/BBS.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/RandomGenerator/Generator.java" afterPath="$PROJECT_DIR$/src/RandomGenerator/Generator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/RandomGenerator/LFSR.java" afterPath="$PROJECT_DIR$/src/RandomGenerator/LFSR.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/RandomGenerator/LinearSequence.java" afterPath="$PROJECT_DIR$/src/RandomGenerator/LinearSequence.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/RandomGenerator/MersenneTwister.java" afterPath="$PROJECT_DIR$/src/RandomGenerator/MersenneTwister.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/RandomGenerator/NFSR.java" afterPath="$PROJECT_DIR$/src/RandomGenerator/NFSR.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/RandomGenerator/Param5.java" afterPath="$PROJECT_DIR$/src/RandomGenerator/Param5.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/RandomGenerator/RC4.java" afterPath="$PROJECT_DIR$/src/RandomGenerator/RC4.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/RandomGenerator/RSA.java" afterPath="$PROJECT_DIR$/src/RandomGenerator/RSA.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/RandomGenerator/Starter.java" afterPath="$PROJECT_DIR$/src/RandomGenerator/Starter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/rogrammDefender/Backuper.java" afterPath="$PROJECT_DIR$/src/rogrammDefender/Backuper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp.txt" afterPath="$PROJECT_DIR$/tmp.txt" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,110 +38,107 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="NFSR.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/RandomGenerator/NFSR.java">
+      <file leaf-file-name="Exponential.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/RandomGenerator/secondTask/Exponential.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="675">
-              <caret line="138" column="5" lean-forward="false" selection-start-line="138" selection-start-column="5" selection-end-line="138" selection-end-column="5" />
+            <state relative-caret-position="240">
+              <caret line="18" column="23" lean-forward="false" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="23" />
               <folding>
-                <element signature="method#toBin#0;class#NFSR#0" expanded="false" />
-                <element signature="method#generate#0;class#NFSR#0" expanded="false" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Generator.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/RandomGenerator/Generator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="13" column="81" lean-forward="false" selection-start-line="13" selection-start-column="81" selection-end-line="13" selection-end-column="81" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Param5.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/RandomGenerator/Param5.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="945">
-              <caret line="75" column="144" lean-forward="false" selection-start-line="75" selection-start-column="144" selection-end-line="75" selection-end-column="144" />
-              <folding>
-                <element signature="method#toBin#0;class#Param5#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RC4.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/RandomGenerator/RC4.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
-              <caret line="44" column="54" lean-forward="false" selection-start-line="44" selection-start-column="54" selection-end-line="44" selection-end-column="54" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RSA.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/RandomGenerator/RSA.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="28" column="62" lean-forward="false" selection-start-line="28" selection-start-column="62" selection-end-line="28" selection-end-column="62" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LinearSequence.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/RandomGenerator/LinearSequence.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="44" column="29" lean-forward="false" selection-start-line="44" selection-start-column="29" selection-end-line="44" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LFSR.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/RandomGenerator/LFSR.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="71" column="71" lean-forward="false" selection-start-line="71" selection-start-column="71" selection-end-line="71" selection-end-column="71" />
-              <folding>
-                <element signature="method#toBin#0;class#LFSR#0" expanded="false" />
-                <element signature="method#generate#0;class#LFSR#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="rnd.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rnd.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AdditiveMethod.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/RandomGenerator/AdditiveMethod.java">
+      <file leaf-file-name="Normal.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/RandomGenerator/secondTask/Normal.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="450">
-              <caret line="30" column="42" lean-forward="false" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="64" />
+              <caret line="32" column="5" lean-forward="false" selection-start-line="7" selection-start-column="1" selection-end-line="32" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Distribution.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/RandomGenerator/secondTask/Distribution.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="25" lean-forward="false" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BBS.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/RandomGenerator/BBS.java">
+      <file leaf-file-name="Starter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/RandomGenerator/Starter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="490">
-              <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+            <state relative-caret-position="2415">
+              <caret line="164" column="0" lean-forward="false" selection-start-line="131" selection-start-column="0" selection-end-line="164" selection-end-column="0" />
+              <folding>
+                <element signature="method#getParamsNFSR#0;class#Starter#0" expanded="false" />
+                <element signature="method#getInitVectorNFSR#0;class#Starter#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Binomial.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/RandomGenerator/secondTask/Binomial.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="915">
+              <caret line="64" column="34" lean-forward="false" selection-start-line="64" selection-start-column="34" selection-end-line="64" selection-end-column="34" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DistribStarter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/RandomGenerator/secondTask/DistribStarter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="765">
+              <caret line="59" column="25" lean-forward="false" selection-start-line="59" selection-start-column="25" selection-end-line="59" selection-end-column="25" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Backuper.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ProgrammDefender/Backuper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="555">
+              <caret line="52" column="29" lean-forward="true" selection-start-line="52" selection-start-column="29" selection-end-line="52" selection-end-column="29" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MyFile.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ProgrammDefender/MyFile.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Logistic.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/RandomGenerator/secondTask/Logistic.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="28" column="86" lean-forward="false" selection-start-line="28" selection-start-column="86" selection-end-line="28" selection-end-column="86" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -159,6 +159,9 @@
       <find>134</find>
       <find>b_f</find>
       <find>firstB</find>
+      <find>delnull</find>
+      <find>rogramm</find>
+      <find>ProgrammDefender</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -185,12 +188,8 @@
         <option value="$PROJECT_DIR$/src/RandomGenerator/pa.java" />
         <option value="$PROJECT_DIR$/src/RandomGenerator/КС.java" />
         <option value="$PROJECT_DIR$/src/CryptoMethods/Num.java" />
-        <option value="$PROJECT_DIR$/src/CryptoMethods/LongArithmetic.java" />
         <option value="$PROJECT_DIR$/lfsr" />
-        <option value="$PROJECT_DIR$/src/rogrammDefender/Backuper.java" />
         <option value="$PROJECT_DIR$/src/RandomGenerator/Generator.java" />
-        <option value="$PROJECT_DIR$/src/RandomGenerator/MersenneTwister.java" />
-        <option value="$PROJECT_DIR$/src/RandomGenerator/Starter.java" />
         <option value="$PROJECT_DIR$/src/RandomGenerator/LinearSequence.java" />
         <option value="$PROJECT_DIR$/src/RandomGenerator/AdditiveMethod.java" />
         <option value="$PROJECT_DIR$/src/RandomGenerator/Param5.java" />
@@ -198,8 +197,26 @@
         <option value="$PROJECT_DIR$/src/RandomGenerator/RC4.java" />
         <option value="$PROJECT_DIR$/src/RandomGenerator/RSA.java" />
         <option value="$PROJECT_DIR$/src/RandomGenerator/LFSR.java" />
-        <option value="$PROJECT_DIR$/rnd.txt" />
         <option value="$PROJECT_DIR$/src/RandomGenerator/BBS.java" />
+        <option value="$PROJECT_DIR$/src/Exc.java" />
+        <option value="$PROJECT_DIR$/src/RandomGenerator/Starter.java" />
+        <option value="$PROJECT_DIR$/src/RandomGenerator/MersenneTwister.java" />
+        <option value="$PROJECT_DIR$/rnd.txt" />
+        <option value="$PROJECT_DIR$/src/CryptoMethods/LongArithmetic.java" />
+        <option value="$PROJECT_DIR$/src/CryptoMethods/longAr.java" />
+        <option value="$PROJECT_DIR$/src/RandomGenerator/secondTask/Normal.java" />
+        <option value="$PROJECT_DIR$/src/RandomGenerator/secondTask/Triangle.java" />
+        <option value="$PROJECT_DIR$/src/RandomGenerator/secondTask/Standart.java" />
+        <option value="$PROJECT_DIR$/src/RandomGenerator/secondTask/Exponential.java" />
+        <option value="$PROJECT_DIR$/src/RandomGenerator/secondTask/LogNormal.java" />
+        <option value="$PROJECT_DIR$/src/RandomGenerator/secondTask/Gamma.java" />
+        <option value="$PROJECT_DIR$/src/RandomGenerator/secondTask/Logistic.java" />
+        <option value="$PROJECT_DIR$/src/RandomGenerator/secondTask/Binomial.java" />
+        <option value="$PROJECT_DIR$/src/RandomGenerator/secondTask/Distribution.java" />
+        <option value="$PROJECT_DIR$/src/RandomGenerator/secondTask/DistribStarter.java" />
+        <option value="$PROJECT_DIR$/src/ProgrammDefender/Backuper.java" />
+        <option value="$PROJECT_DIR$/src/ProgrammDefender/Backuper.java" />
+        <option value="$PROJECT_DIR$/.idea/workspace.xml" />
       </list>
     </option>
   </component>
@@ -229,8 +246,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -247,26 +266,12 @@
               <item name="4th" type="b2602c69:ProjectViewProjectNode" />
               <item name="4th" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="CryptoMethods" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="4th" type="b2602c69:ProjectViewProjectNode" />
-              <item name="4th" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="RandomGenerator" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="4th" type="b2602c69:ProjectViewProjectNode" />
-              <item name="4th" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="rogrammDefender" type="462c0819:PsiDirectoryNode" />
+              <item name="ProgrammDefender" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -289,15 +294,15 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Starter">
-    <configuration name="AdditiveMethod" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.Backuper">
+    <configuration name="Backuper" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="RandomGenerator.*" />
+          <option name="PATTERN" value="ProgrammDefender.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="RandomGenerator.AdditiveMethod" />
+      <option name="MAIN_CLASS_NAME" value="ProgrammDefender.Backuper" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" />
@@ -309,14 +314,14 @@
       <module name="4th" />
       <envs />
     </configuration>
-    <configuration name="Backuper" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="DistribStarter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="rogrammDefender.*" />
+          <option name="PATTERN" value="RandomGenerator.secondTask.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="rogrammDefender.Backuper" />
+      <option name="MAIN_CLASS_NAME" value="RandomGenerator.secondTask.DistribStarter" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" />
@@ -336,25 +341,6 @@
         </pattern>
       </extension>
       <option name="MAIN_CLASS_NAME" value="CryptoMethods.LongArithmetic" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="4th" />
-      <envs />
-    </configuration>
-    <configuration name="Num" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="CryptoMethods.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="CryptoMethods.Num" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" />
@@ -400,20 +386,39 @@
       <envs />
       <method />
     </configuration>
+    <configuration name="longAr" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="CryptoMethods.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="CryptoMethods.longAr" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="4th" />
+      <envs />
+    </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.AdditiveMethod" />
-      <item index="1" class="java.lang.String" itemvalue="Application.Starter" />
-      <item index="2" class="java.lang.String" itemvalue="Application.Num" />
-      <item index="3" class="java.lang.String" itemvalue="Application.LongArithmetic" />
+      <item index="0" class="java.lang.String" itemvalue="Application.Starter" />
+      <item index="1" class="java.lang.String" itemvalue="Application.LongArithmetic" />
+      <item index="2" class="java.lang.String" itemvalue="Application.longAr" />
+      <item index="3" class="java.lang.String" itemvalue="Application.DistribStarter" />
       <item index="4" class="java.lang.String" itemvalue="Application.Backuper" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.Starter" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Backuper" />
-        <item index="2" class="java.lang.String" itemvalue="Application.LongArithmetic" />
-        <item index="3" class="java.lang.String" itemvalue="Application.Num" />
-        <item index="4" class="java.lang.String" itemvalue="Application.AdditiveMethod" />
+        <item index="0" class="java.lang.String" itemvalue="Application.Backuper" />
+        <item index="1" class="java.lang.String" itemvalue="Application.DistribStarter" />
+        <item index="2" class="java.lang.String" itemvalue="Application.longAr" />
+        <item index="3" class="java.lang.String" itemvalue="Application.LongArithmetic" />
+        <item index="4" class="java.lang.String" itemvalue="Application.Starter" />
       </list>
     </recent_temporary>
   </component>
@@ -453,7 +458,17 @@
       <workItem from="1554016177563" duration="14195000" />
       <workItem from="1554292098788" duration="3478000" />
       <workItem from="1554484180771" duration="9493000" />
-      <workItem from="1554634696948" duration="257000" />
+      <workItem from="1554634696948" duration="357000" />
+      <workItem from="1554658372309" duration="202000" />
+      <workItem from="1554711357837" duration="1342000" />
+      <workItem from="1554719387371" duration="22000" />
+      <workItem from="1555130358451" duration="1260000" />
+      <workItem from="1555136347229" duration="2420000" />
+      <workItem from="1555265270131" duration="6254000" />
+      <workItem from="1555351108492" duration="589000" />
+      <workItem from="1555695559454" duration="3049000" />
+      <workItem from="1555699165350" duration="886000" />
+      <workItem from="1555700211909" duration="176000" />
     </task>
     <task id="LOCAL-00001" summary="add-operation">
       <created>1551082764157</created>
@@ -511,28 +526,36 @@
       <option name="project" value="LOCAL" />
       <updated>1554484565020</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Long">
+      <created>1554635396206</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1554635396207</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107997000" />
+    <option name="totallyTimeSpent" value="124297000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32933334" sideWeight="0.525" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28533334" sideWeight="0.475" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.284" sideWeight="0.475" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22890624" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22890624" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -545,7 +568,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32933334" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32933334" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -562,253 +584,208 @@
     <MESSAGE value="subtraction" />
     <MESSAGE value="backuper" />
     <MESSAGE value="Random generators" />
-    <option name="LAST_COMMIT_MESSAGE" value="Random generators" />
+    <MESSAGE value="Long" />
+    <option name="LAST_COMMIT_MESSAGE" value="Long" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/CryptoMethods/LongArithmetic.java</url>
-          <line>215</line>
-          <properties />
-          <option name="timeStamp" value="120" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/CryptoMethods/LongArithmetic.java</url>
-          <line>122</line>
-          <properties />
-          <option name="timeStamp" value="127" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/RandomGenerator/LFSR.java</url>
           <line>66</line>
           <properties />
           <option name="timeStamp" value="134" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/RandomGenerator/MersenneTwister.java</url>
+          <line>47</line>
+          <properties />
+          <option name="timeStamp" value="163" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/CryptoMethods/LongArithmetic.java</url>
+          <line>246</line>
+          <properties />
+          <option name="timeStamp" value="166" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/CryptoMethods/longAr.java</url>
+          <line>165</line>
+          <properties />
+          <option name="timeStamp" value="168" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/CryptoMethods/LongArithmetic.java</url>
+          <line>207</line>
+          <properties class="CryptoMethods.LongArithmetic" method="div">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="169" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="163" />
+      <option name="time" value="172" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/rogrammDefender/Backuper.java">
+    <entry file="file://$PROJECT_DIR$/src/RandomGenerator/LinearSequence.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="825">
-          <caret line="141" column="39" lean-forward="false" selection-start-line="141" selection-start-column="39" selection-end-line="141" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tmp.txt" />
-    <entry file="file://$PROJECT_DIR$/src/rogrammDefender/MyFile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="52" column="36" lean-forward="false" selection-start-line="52" selection-start-column="36" selection-end-line="52" selection-end-column="36" />
+        <state relative-caret-position="690">
+          <caret line="46" column="8" lean-forward="false" selection-start-line="44" selection-start-column="8" selection-end-line="46" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CryptoMethods/LongArithmetic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="150" column="22" lean-forward="true" selection-start-line="150" selection-start-column="22" selection-end-line="150" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CryptoMethods/LongArithmetic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2235">
-          <caret line="149" column="14" lean-forward="true" selection-start-line="149" selection-start-column="14" selection-end-line="149" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/rogrammDefender/Backuper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="825">
-          <caret line="141" column="39" lean-forward="true" selection-start-line="141" selection-start-column="39" selection-end-line="141" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tmp.txt" />
-    <entry file="file://$PROJECT_DIR$/src/rogrammDefender/MyFile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
-          <caret line="52" column="36" lean-forward="false" selection-start-line="52" selection-start-column="36" selection-end-line="52" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CryptoMethods/LongArithmetic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2445">
-          <caret line="163" column="18" lean-forward="true" selection-start-line="163" selection-start-column="18" selection-end-line="163" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CryptoMethods/LongArithmetic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="74" column="9" lean-forward="true" selection-start-line="74" selection-start-column="9" selection-end-line="74" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CryptoMethods/LongArithmetic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1215">
-          <caret line="81" column="1" lean-forward="true" selection-start-line="81" selection-start-column="1" selection-end-line="81" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CryptoMethods/LongArithmetic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CryptoMethods/LongArithmetic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CryptoMethods/LongArithmetic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CryptoMethods/LongArithmetic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CryptoMethods/first.java" />
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/src.zip!/java/nio/file/attribute/BasicFileAttributes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="45" column="17" lean-forward="false" selection-start-line="45" selection-start-column="17" selection-end-line="45" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/4th.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/RandomGenerator/pa.java" />
-    <entry file="file://$PROJECT_DIR$/src/RandomGenerator/КС.java" />
-    <entry file="file://$PROJECT_DIR$/test.txt" />
-    <entry file="file://$PROJECT_DIR$/res.txt" />
-    <entry file="file://$PROJECT_DIR$/flsr" />
-    <entry file="file://$PROJECT_DIR$/src/CryptoMethods/Num.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6645">
-          <caret line="452" column="46" lean-forward="false" selection-start-line="452" selection-start-column="46" selection-end-line="452" selection-end-column="46" />
           <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1455#1456#0" expanded="false" />
-            <element signature="e#1508#1509#0" expanded="false" />
-            <element signature="e#7336#7337#0" expanded="false" />
-            <element signature="e#7384#7385#0" expanded="false" />
-            <element signature="e#7473#7474#0" expanded="false" />
-            <element signature="e#7514#7515#0" expanded="false" />
-            <element signature="e#9852#9853#0" expanded="false" />
-            <element signature="e#9921#9922#0" expanded="false" />
-            <element signature="e#16542#16543#0" expanded="false" />
-            <element signature="e#16596#16597#0" expanded="false" />
-            <element signature="e#20842#20843#0" expanded="false" />
-            <element signature="e#20869#20870#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rnr.txt" />
-    <entry file="file://$PROJECT_DIR$/lfsr">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CryptoMethods/LongArithmetic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="187" column="0" lean-forward="false" selection-start-line="187" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
-          <folding>
+            <element signature="imports" expanded="true" />
             <element signature="method#normalize#0;class#LongArithmetic#0" expanded="false" />
             <element signature="method#reverce#0;class#LongArithmetic#0" expanded="false" />
             <element signature="method#validate#0;class#LongArithmetic#0" expanded="false" />
             <element signature="method#add#0;class#LongArithmetic#0" expanded="false" />
             <element signature="method#subtract#0;class#LongArithmetic#0" expanded="false" />
             <element signature="method#mul#0;class#LongArithmetic#0" expanded="false" />
-            <element signature="method#div#0;class#LongArithmetic#0" expanded="false" />
+            <element signature="method#divEz#0;class#LongArithmetic#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CryptoMethods/longAr.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3495">
+          <caret line="233" column="77" lean-forward="false" selection-start-line="233" selection-start-column="77" selection-end-line="233" selection-end-column="77" />
+          <folding>
+            <element signature="method#longAr#0;class#longAr#0" expanded="false" />
+            <element signature="method#longAr#1;class#longAr#0" expanded="false" />
+            <element signature="method#longAr#2;class#longAr#0" expanded="false" />
+            <element signature="method#compareTo#0;class#longAr#0" expanded="false" />
+            <element signature="method#delNull#0;class#longAr#0" expanded="false" />
+            <element signature="method#add#0;class#longAr#0" expanded="false" />
+            <element signature="method#sub#0;class#longAr#0" expanded="false" />
+            <element signature="method#mul#0;class#longAr#0" expanded="false" />
+            <element signature="method#mul#1;class#longAr#0" expanded="false" />
+            <element signature="method#div#0;class#longAr#0" expanded="false" />
+            <element signature="method#div#1;class#longAr#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RandomGenerator/MersenneTwister.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="885">
+          <caret line="59" column="35" lean-forward="false" selection-start-line="59" selection-start-column="35" selection-end-line="59" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rnd.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rnd1.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RandomGenerator/Starter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1530">
+          <caret line="105" column="45" lean-forward="false" selection-start-line="105" selection-start-column="45" selection-end-line="105" selection-end-column="45" />
+          <folding>
+            <element signature="method#getParamsNFSR#0;class#Starter#0" expanded="false" />
+            <element signature="method#getInitVectorNFSR#0;class#Starter#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RandomGenerator/LinearSequence.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="46" column="8" lean-forward="false" selection-start-line="44" selection-start-column="8" selection-end-line="46" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CryptoMethods/LongArithmetic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="825">
+          <caret line="215" column="29" lean-forward="false" selection-start-line="215" selection-start-column="29" selection-end-line="215" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#normalize#0;class#LongArithmetic#0" expanded="false" />
+            <element signature="method#reverce#0;class#LongArithmetic#0" expanded="false" />
+            <element signature="method#validate#0;class#LongArithmetic#0" expanded="false" />
+            <element signature="method#add#0;class#LongArithmetic#0" expanded="false" />
+            <element signature="method#subtract#0;class#LongArithmetic#0" expanded="false" />
+            <element signature="method#mul#0;class#LongArithmetic#0" expanded="false" />
+            <element signature="method#divEz#0;class#LongArithmetic#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RandomGenerator/MersenneTwister.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="885">
+          <caret line="59" column="35" lean-forward="true" selection-start-line="59" selection-start-column="35" selection-end-line="59" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rnd.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RandomGenerator/Starter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1530">
+          <caret line="105" column="45" lean-forward="false" selection-start-line="105" selection-start-column="45" selection-end-line="105" selection-end-column="45" />
+          <folding>
+            <element signature="method#getParamsNFSR#0;class#Starter#0" expanded="false" />
+            <element signature="method#getInitVectorNFSR#0;class#Starter#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RandomGenerator/LinearSequence.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="46" column="8" lean-forward="false" selection-start-line="44" selection-start-column="8" selection-end-line="46" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rnd1.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CryptoMethods/LongArithmetic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="825">
+          <caret line="215" column="29" lean-forward="false" selection-start-line="215" selection-start-column="29" selection-end-line="215" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#normalize#0;class#LongArithmetic#0" expanded="false" />
+            <element signature="method#reverce#0;class#LongArithmetic#0" expanded="false" />
+            <element signature="method#validate#0;class#LongArithmetic#0" expanded="false" />
+            <element signature="method#add#0;class#LongArithmetic#0" expanded="false" />
+            <element signature="method#subtract#0;class#LongArithmetic#0" expanded="false" />
+            <element signature="method#mul#0;class#LongArithmetic#0" expanded="false" />
+            <element signature="method#divEz#0;class#LongArithmetic#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -820,52 +797,80 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/rogrammDefender/MyFile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="930">
-          <caret line="93" column="32" lean-forward="false" selection-start-line="93" selection-start-column="32" selection-end-line="93" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/rogrammDefender/Backuper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="798">
-          <caret line="148" column="43" lean-forward="true" selection-start-line="148" selection-start-column="43" selection-end-line="148" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/RandomGenerator/MersenneTwister.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="236" column="5" lean-forward="false" selection-start-line="236" selection-start-column="5" selection-end-line="236" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/RandomGenerator/Starter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-56">
-          <caret line="149" column="23" lean-forward="false" selection-start-line="149" selection-start-column="23" selection-end-line="149" selection-end-column="23" />
+        <state relative-caret-position="1530">
+          <caret line="105" column="45" lean-forward="true" selection-start-line="105" selection-start-column="45" selection-end-line="105" selection-end-column="45" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#setType#0;class#Starter#0" expanded="false" />
-            <element signature="method#getCount#0;class#Starter#0" expanded="false" />
-            <element signature="method#getFileName#0;class#Starter#0" expanded="false" />
-            <element signature="method#getParams#0;class#Starter#0" expanded="false" />
-            <element signature="method#getInitVector#0;class#Starter#0" expanded="false" />
+            <element signature="method#getParamsNFSR#0;class#Starter#0" expanded="false" />
+            <element signature="method#getInitVectorNFSR#0;class#Starter#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RandomGenerator/Generator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/RandomGenerator/LinearSequence.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="44" column="29" lean-forward="false" selection-start-line="44" selection-start-column="29" selection-end-line="44" selection-end-column="29" />
-          <folding />
+        <state relative-caret-position="555">
+          <caret line="37" column="37" lean-forward="true" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RandomGenerator/MersenneTwister.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="43" column="39" lean-forward="true" selection-start-line="43" selection-start-column="39" selection-end-line="43" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CryptoMethods/LongArithmetic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#normalize#0;class#LongArithmetic#0" expanded="false" />
+            <element signature="method#reverce#0;class#LongArithmetic#0" expanded="false" />
+            <element signature="method#validate#0;class#LongArithmetic#0" expanded="false" />
+            <element signature="method#add#0;class#LongArithmetic#0" expanded="false" />
+            <element signature="method#subtract#0;class#LongArithmetic#0" expanded="false" />
+            <element signature="method#mul#0;class#LongArithmetic#0" expanded="false" />
+            <element signature="method#divEz#0;class#LongArithmetic#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CryptoMethods/LongArithmetic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3060">
+          <caret line="204" column="38" lean-forward="true" selection-start-line="204" selection-start-column="38" selection-end-line="204" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#normalize#0;class#LongArithmetic#0" expanded="false" />
+            <element signature="method#reverce#0;class#LongArithmetic#0" expanded="false" />
+            <element signature="method#validate#0;class#LongArithmetic#0" expanded="false" />
+            <element signature="method#add#0;class#LongArithmetic#0" expanded="false" />
+            <element signature="method#subtract#0;class#LongArithmetic#0" expanded="false" />
+            <element signature="method#mul#0;class#LongArithmetic#0" expanded="false" />
+            <element signature="method#divEz#0;class#LongArithmetic#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Exc.java" />
+    <entry file="file://$PROJECT_DIR$/src/RandomGenerator/NFSR.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="138" column="5" lean-forward="false" selection-start-line="138" selection-start-column="5" selection-end-line="138" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -873,25 +878,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="945">
           <caret line="75" column="144" lean-forward="false" selection-start-line="75" selection-start-column="144" selection-end-line="75" selection-end-column="144" />
-          <folding>
-            <element signature="method#toBin#0;class#Param5#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/RandomGenerator/Generator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="13" column="81" lean-forward="false" selection-start-line="13" selection-start-column="81" selection-end-line="13" selection-end-column="81" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/RandomGenerator/RSA.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="62" lean-forward="false" selection-start-line="28" selection-start-column="62" selection-end-line="28" selection-end-column="62" />
-          <folding />
+        <state relative-caret-position="570">
+          <caret line="38" column="104" lean-forward="false" selection-start-line="38" selection-start-column="42" selection-end-line="38" selection-end-column="104" />
         </state>
       </provider>
     </entry>
@@ -906,29 +899,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/RandomGenerator/RC4.java">
+    <entry file="file://$PROJECT_DIR$/src/Exc.java" />
+    <entry file="file://$PROJECT_DIR$/tmp.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="44" column="54" lean-forward="false" selection-start-line="44" selection-start-column="54" selection-end-line="44" selection-end-column="54" />
-          <folding />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/RandomGenerator/AdditiveMethod.java">
+    <entry file="file://$PROJECT_DIR$/src/RandomGenerator/LinearSequence.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="42" lean-forward="false" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="64" />
-          <folding />
+        <state relative-caret-position="690">
+          <caret line="46" column="8" lean-forward="false" selection-start-line="44" selection-start-column="8" selection-end-line="46" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/RandomGenerator/NFSR.java">
+    <entry file="file://$PROJECT_DIR$/src/RandomGenerator/MersenneTwister.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="138" column="5" lean-forward="false" selection-start-line="138" selection-start-column="5" selection-end-line="138" selection-end-column="5" />
+        <state relative-caret-position="840">
+          <caret line="59" column="35" lean-forward="false" selection-start-line="59" selection-start-column="35" selection-end-line="59" selection-end-column="35" />
           <folding>
-            <element signature="method#toBin#0;class#NFSR#0" expanded="false" />
-            <element signature="method#generate#0;class#NFSR#0" expanded="false" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -937,15 +928,186 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rnd1.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CryptoMethods/LongArithmetic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1110">
+          <caret line="247" column="0" lean-forward="false" selection-start-line="247" selection-start-column="0" selection-end-line="247" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#normalize#0;class#LongArithmetic#0" expanded="false" />
+            <element signature="method#reverce#0;class#LongArithmetic#0" expanded="false" />
+            <element signature="method#validate#0;class#LongArithmetic#0" expanded="false" />
+            <element signature="method#add#0;class#LongArithmetic#0" expanded="false" />
+            <element signature="method#subtract#0;class#LongArithmetic#0" expanded="false" />
+            <element signature="method#mul#0;class#LongArithmetic#0" expanded="false" />
+            <element signature="method#divEz#0;class#LongArithmetic#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CryptoMethods/longAr.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="587">
+          <caret line="233" column="77" lean-forward="false" selection-start-line="233" selection-start-column="77" selection-end-line="233" selection-end-column="77" />
+          <folding>
+            <element signature="method#longAr#0;class#longAr#0" expanded="false" />
+            <element signature="method#longAr#1;class#longAr#0" expanded="false" />
+            <element signature="method#longAr#2;class#longAr#0" expanded="false" />
+            <element signature="method#compareTo#0;class#longAr#0" expanded="false" />
+            <element signature="method#delNull#0;class#longAr#0" expanded="false" />
+            <element signature="method#add#0;class#longAr#0" expanded="false" />
+            <element signature="method#sub#0;class#longAr#0" expanded="false" />
+            <element signature="method#mul#0;class#longAr#0" expanded="false" />
+            <element signature="method#mul#1;class#longAr#0" expanded="false" />
+            <element signature="method#div#0;class#longAr#0" expanded="false" />
+            <element signature="method#div#1;class#longAr#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RandomGenerator/RC4.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="44" column="54" lean-forward="false" selection-start-line="44" selection-start-column="54" selection-end-line="44" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RandomGenerator/Generator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="10" column="44" lean-forward="true" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RandomGenerator/secondTask/Triangle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="19" lean-forward="false" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RandomGenerator/secondTask/Standart.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="29" column="19" lean-forward="false" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RandomGenerator/secondTask/LogNormal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="28" column="36" lean-forward="false" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RandomGenerator/secondTask/Gamma.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="32" column="1" lean-forward="false" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RandomGenerator/secondTask/Normal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="32" column="5" lean-forward="false" selection-start-line="7" selection-start-column="1" selection-end-line="32" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RandomGenerator/secondTask/Logistic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="28" column="86" lean-forward="false" selection-start-line="28" selection-start-column="86" selection-end-line="28" selection-end-column="86" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RandomGenerator/secondTask/Exponential.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="18" column="23" lean-forward="false" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RandomGenerator/secondTask/Binomial.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="915">
+          <caret line="64" column="34" lean-forward="false" selection-start-line="64" selection-start-column="34" selection-end-line="64" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RandomGenerator/Starter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2415">
+          <caret line="164" column="0" lean-forward="false" selection-start-line="131" selection-start-column="0" selection-end-line="164" selection-end-column="0" />
+          <folding>
+            <element signature="method#getParamsNFSR#0;class#Starter#0" expanded="false" />
+            <element signature="method#getInitVectorNFSR#0;class#Starter#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RandomGenerator/secondTask/Distribution.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="25" lean-forward="false" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/RandomGenerator/BBS.java">
+    <entry file="file://$PROJECT_DIR$/src/RandomGenerator/secondTask/DistribStarter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="490">
-          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+        <state relative-caret-position="765">
+          <caret line="59" column="25" lean-forward="false" selection-start-line="59" selection-start-column="25" selection-end-line="59" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2617">
+          <caret line="228" column="14" lean-forward="false" selection-start-line="228" selection-start-column="14" selection-end-line="228" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ProgrammDefender/MyFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ProgrammDefender/Backuper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="52" column="29" lean-forward="true" selection-start-line="52" selection-start-column="29" selection-end-line="52" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
