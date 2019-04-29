@@ -1,21 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c7cc09cd-c6f2-4dea-a13f-7193627f4d7f" name="Default" comment="Crypto">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/4th/rogrammDefender/Backuper.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/4th/rogrammDefender/MyFile.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/4th/CryptoMethods/LongArithmetic.class" afterPath="$PROJECT_DIR$/out/production/4th/CryptoMethods/LongArithmetic.class" />
+    <list default="true" id="c7cc09cd-c6f2-4dea-a13f-7193627f4d7f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/RandomGenerator/secondTask/Binomial.java" afterPath="$PROJECT_DIR$/src/RandomGenerator/secondTask/Binomial.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/RandomGenerator/secondTask/DistribStarter.java" afterPath="$PROJECT_DIR$/src/RandomGenerator/secondTask/DistribStarter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/RandomGenerator/secondTask/Distribution.java" afterPath="$PROJECT_DIR$/src/RandomGenerator/secondTask/Distribution.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/RandomGenerator/secondTask/Exponential.java" afterPath="$PROJECT_DIR$/src/RandomGenerator/secondTask/Exponential.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/RandomGenerator/secondTask/Gamma.java" afterPath="$PROJECT_DIR$/src/RandomGenerator/secondTask/Gamma.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/RandomGenerator/secondTask/LogNormal.java" afterPath="$PROJECT_DIR$/src/RandomGenerator/secondTask/LogNormal.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/RandomGenerator/secondTask/Logistic.java" afterPath="$PROJECT_DIR$/src/RandomGenerator/secondTask/Logistic.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/RandomGenerator/secondTask/Normal.java" afterPath="$PROJECT_DIR$/src/RandomGenerator/secondTask/Normal.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/RandomGenerator/secondTask/Standart.java" afterPath="$PROJECT_DIR$/src/RandomGenerator/secondTask/Standart.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/RandomGenerator/secondTask/Triangle.java" afterPath="$PROJECT_DIR$/src/RandomGenerator/secondTask/Triangle.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -476,7 +463,7 @@
       <workItem from="1555949980910" duration="183000" />
       <workItem from="1556308170296" duration="4729000" />
       <workItem from="1556462238823" duration="42000" />
-      <workItem from="1556525349948" duration="6489000" />
+      <workItem from="1556525349948" duration="6574000" />
     </task>
     <task id="LOCAL-00001" summary="add-operation">
       <created>1551082764157</created>
@@ -548,11 +535,18 @@
       <option name="project" value="LOCAL" />
       <updated>1555700430435</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Crypto">
+      <created>1556533689946</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1556533689946</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="152945000" />
+    <option name="totallyTimeSpent" value="153030000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
