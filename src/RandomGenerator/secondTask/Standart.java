@@ -17,6 +17,7 @@ public class Standart extends Distribution {
     }
 
     void toDistribution() throws IOException {
+        init();
         double max = -Integer.MIN_VALUE;
         for (Double aDouble : array) {
             if (aDouble > max)

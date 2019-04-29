@@ -2,12 +2,10 @@ package RandomGenerator.secondTask;
 
 import RandomGenerator.*;
 
-import java.io.BufferedReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class DistribStarter {
@@ -15,38 +13,50 @@ public class DistribStarter {
         Distribution distribution = null;
         String type = "";
         for (String param : params) {
-            if (param.contains("g:"))
+            if (param.contains("d:"))
                 type = param.substring(param.indexOf(':') + 1);
         }
 
         switch (type) {
-            case "":
+            case "bi":
                 distribution = new Binomial();
                 break;
-            case "add":
+            case "ex":
                 distribution = new Exponential();
                 break;
-            case "5p":
+            case "gm":
                 distribution = new Gamma();
                 break;
-            case "lfsr":
+            case "ls":
                 distribution = new Logistic();
                 break;
-            case "nfsr":
+            case "ln":
                 distribution = new LogNormal();
                 break;
-            case "mt":
+            case "nr":
                 distribution = new Normal();
                 break;
-            case "rc4":
+            case "st":
                 distribution = new Standart();
                 break;
-            case "rsa":
+            case "tr":
                 distribution = new Triangle();
                 break;
         }
         return distribution;
     }
+
+    String getFileName(List<String> params) throws FileNotFoundException {
+        String fileName = "";
+        for (String param : params) {
+            if (param.contains("f:")) {
+                fileName = param.substring(param.indexOf(':') + 1);
+            }
+        }
+
+        return fileName.equals("") ? "rnd.txt" : fileName;
+    }
+
 
     List<Double> getParams(List<String> params) {
         List<String> res = new ArrayList<>();
@@ -70,6 +80,18 @@ public class DistribStarter {
     }
 
     public static void main(String[] args) throws IOException {
+
+        System.out.println("Examples:");
+        System.out.println("Стандартное:/d:st /p:3 15 /f:rnd.txt ");
+        System.out.println("Треугольное:/d:tr /p:3 15 /f:rnd.txt ");
+        System.out.println("Экспоненциальное:/d:ex /p:3 15 /f:rnd.txt ");
+        System.out.println("Нормальное:/d:nr /p:3 15 /f:rnd.txt ");
+        System.out.println("Гамма:/d:gm /p:3 15 /f:rnd.txt ");
+        System.out.println("Логнормальное:/d:ln /p:3 15 /f:rnd.txt ");
+        System.out.println("Логистическое:/d:ls /p:3 15 /f:rnd.txt ");
+        System.out.println("Биномиальное:/d:bi /p:0.3 100 /f:rnd.txt ");
+
+
         DistribStarter s = new DistribStarter();
         try {
             BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -82,10 +104,29 @@ public class DistribStarter {
                     params.set(i, params.get(i).substring(0, params.get(i).length() - 1));
                 }
             }
-            Distribution distribution = setType(params);
-            distribution.filename = "rnd.txt";
-            distribution.parameters = (ArrayList<Double>) s.getParams(params);
+            Distribution distribution;
+            distribution = setType(params);
+            String fn = s.getFileName(params);
+            distribution.inputFile = fn;
+            BufferedReader reader = new BufferedReader(new FileReader(distribution.inputFile));
+            ArrayList<Double> input = new ArrayList<>();
 
+            String temp ="";
+            String t = "";
+
+            while((t = reader.readLine())!=null)
+            {
+                temp+=t;
+            }
+
+            String[] split = temp.split(" ");
+            for (String s1 : split) {
+                input.add(Double.parseDouble(s1));
+            }
+
+            distribution.parameters = (ArrayList<Double>) s.getParams(params);
+            distribution.inputArray = input;
+            distribution.toDistribution();
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -17,6 +17,7 @@ public class LogNormal extends Distribution {
     }
 
     void toDistribution() throws IOException {
+        init();
         double max = -Integer.MIN_VALUE;
         for (Double aDouble : array) {
             if (aDouble > max)
@@ -25,9 +26,12 @@ public class LogNormal extends Distribution {
         max++;
 
         FileWriter fw = new FileWriter("output.txt");
+        int count = 0;
         for (Double i : array) {
             fw.write(String.format(String.valueOf((p1 + Math.exp(p2 - i / max)))) + " ");
+            count++;
         }
+
         fw.close();
     }
 }

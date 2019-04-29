@@ -44,6 +44,7 @@ public class Binomial extends Distribution {
 
 
     public void toDistribution() throws IOException {
+        init();
         FileWriter fw = new FileWriter("output.txt");
         double max = Integer.MIN_VALUE;
         for (int i = 0; i < array.size(); i++) {
