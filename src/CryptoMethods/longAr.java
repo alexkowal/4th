@@ -3,17 +3,28 @@ package CryptoMethods;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.math.BigInteger;
 import java.util.ArrayList;
 
 public class longAr {
+
+
+    @Override
+    public String toString() {
+        String result = "";
+        for (int i = this.longDigit.size() - 1; i >= 0; i--)
+            result += this.longDigit.get(i);
+        return result;
+    }
 
     ArrayList<Integer> longDigit = new ArrayList<>();
     private static int base = 10;
     private static int lenghtOfBase = 1;
     private boolean sign = true;
     static int k = 0;
-    boolean flag = false;
     boolean showOst = false;
+    boolean flag = false;
+
 
     longAr(String str) {
         for (int i = (int) str.length(); i > 0; i -= lenghtOfBase) {
@@ -22,16 +33,6 @@ public class longAr {
             else
                 longDigit.add(Integer.parseInt(str.substring(i - lenghtOfBase, i)));
         }
-    }
-
-    @Override
-    public String toString() {
-        String res = "";
-        ArrayList<Integer> tmp = removeZeros(this.longDigit);
-        for (int i = tmp.size() - 1; i >= 0; i--) {
-            res += tmp.get(i);
-        }
-        return res;
     }
 
     private longAr(ArrayList<Integer> a, boolean sign) {
@@ -96,6 +97,51 @@ public class longAr {
         return new longAr(res);
     }
 
+    longAr subForDiv(longAr a) {
+        k = 0;
+        int nMax = Math.max(a.longDigit.size(), this.longDigit.size());
+        int nMin = Math.min(a.longDigit.size(), this.longDigit.size());
+        longAr arg3 = new longAr("");
+        for (int i = 0; i < nMax; i++)
+            arg3.longDigit.add(0);
+        for (int i = 0; i < nMin; i++) {
+            arg3.longDigit.set(i, (this.longDigit.get(i) - a.longDigit.get(i) + k));
+            if (arg3.longDigit.get(i) < 0) {
+                arg3.longDigit.set(i, arg3.longDigit.get(i) + base);
+                k = -1;
+            } else
+                k = 0;
+        }
+        if (this.longDigit.size() > a.longDigit.size()) {
+            for (int i = nMin; i < nMax; i++) {
+                arg3.longDigit.set(i, (this.longDigit.get(i) + k));
+                if (arg3.longDigit.get(i) < 0) {
+                    arg3.longDigit.set(i, arg3.longDigit.get(i) + base);
+                    k = -1;
+                } else
+                    k = 0;
+            }
+        } else {
+            for (int i = nMin; i < nMax; i++) {
+                arg3.longDigit.set(i, (a.longDigit.get(i) + k));
+                if (arg3.longDigit.get(i) < 0) {
+                    arg3.longDigit.set(i, arg3.longDigit.get(i) + 10);
+                    k = -1;
+                } else
+                    k = 0;
+            }
+        }
+        if (k == -1) {
+
+            longAr tmp = a.subForDiv(this);
+            tmp.longDigit = removeZeros(tmp.longDigit);
+            tmp.k = -1;
+            tmp.longDigit = removeZeros(tmp.longDigit);
+            return tmp;
+        }
+        return arg3;
+    }
+
     longAr sub(longAr a) {
         k = 0;
         int nMax = Math.max(a.longDigit.size(), this.longDigit.size());
@@ -103,7 +149,6 @@ public class longAr {
         longAr arg3 = new longAr("");
         for (int i = 0; i < nMax; i++)
             arg3.longDigit.add(0);
-
         for (int i = 0; i < nMin; i++) {
             arg3.longDigit.set(i, (this.longDigit.get(i) - a.longDigit.get(i) + k));
             if (arg3.longDigit.get(i) < 0) {
@@ -112,7 +157,6 @@ public class longAr {
             } else
                 k = 0;
         }
-
         if (this.longDigit.size() > a.longDigit.size()) {
             for (int i = nMin; i < nMax; i++) {
                 arg3.longDigit.set(i, (this.longDigit.get(i) + k));
@@ -122,43 +166,16 @@ public class longAr {
                 } else
                     k = 0;
             }
-        }
-
-       /* if (k == -1)
-            return a.subWithMinus(this, -1);
-*/
-        return arg3;
-    }
-
-    longAr subWithMinus(longAr a, int sign) {
-
-        k = 0;
-        int nMax = Math.max(a.longDigit.size(), this.longDigit.size());
-        int nMin = Math.min(a.longDigit.size(), this.longDigit.size());
-        longAr arg3 = new longAr("");
-        for (int i = 0; i < nMax; i++)
-            arg3.longDigit.add(0);
-
-        for (int i = 0; i < nMin; i++) {
-            arg3.longDigit.set(i, (this.longDigit.get(i) - a.longDigit.get(i) + k));
-            if (arg3.longDigit.get(i) < 0) {
-                arg3.longDigit.set(i, arg3.longDigit.get(i) + base);
-                k = -1;
-            } else
-                k = 0;
-        }
-
-        if (this.longDigit.size() > a.longDigit.size()) {
+        } else {
             for (int i = nMin; i < nMax; i++) {
-                arg3.longDigit.set(i, (this.longDigit.get(i) + k));
+                arg3.longDigit.set(i, (a.longDigit.get(i) + k));
                 if (arg3.longDigit.get(i) < 0) {
-                    arg3.longDigit.set(i, arg3.longDigit.get(i) + base);
+                    arg3.longDigit.set(i, arg3.longDigit.get(i) + 10);
                     k = -1;
                 } else
                     k = 0;
             }
         }
-        arg3.k = -1;
         return arg3;
     }
 
@@ -186,7 +203,6 @@ public class longAr {
     }
 
     longAr div(int v) {
-
         int num = this.longDigit.size() - 1;
         int ost = 0;
         longAr res = new longAr("");
@@ -202,7 +218,7 @@ public class longAr {
             if (this.flag) {
                 longAr temp = (res);
                 ArrayList<Integer> result = this.sub(temp.mul(v)).longDigit;
-                removeZeros(result);
+                result = removeZeros(result);
 
                 System.out.print("Остаток = ");
                 for (int i = result.size() - 1; i >= 0; i--) {
@@ -211,21 +227,15 @@ public class longAr {
             }
             System.out.println();
         }
+        res.longDigit = removeZeros(res.longDigit);
 
         return res;
 
-
     }
 
-    static longAr getOst(longAr u, int d) {
-        return u.div(d);
-    }
 
     public static longAr div(longAr u, longAr v) {
-        longAr qj = u;
-        longAr tempv = v;
-        longAr tempu = u;
-
+        boolean show = u.showOst;
         if (u.compareTo(v) == -1)
             return new longAr("0");
 
@@ -233,8 +243,8 @@ public class longAr {
 
         if (v.longDigit.size() == 1) {
             int k22 = v.longDigit.get(0);
-
-            u.flag = true;
+            u.showOst = show;
+            u.flag = show;
             return u.div(k22);
         }
 
@@ -247,30 +257,12 @@ public class longAr {
 
         int d = (base / (v.longDigit.get(n - 1) + 1));
 
-        /*
-        * ПУНКТ 1 АЛГОРИТМА ДЕЛЕНИЯ НАЧАЛО
-        * */
-
-        boolean show = u.showOst;
         u = u.mul(d);
         v = v.mul(d);
 
+
         if (d == 1 || u.longDigit.size() <= m + n)
             u.longDigit.add(0);
-
-        /*
-        * ПУНКТ 1 АЛГОРИТМА ДЕЛЕНИЯ КОНЕЦ
-        * */
-
-        /*
-        * ПУНКТ 2 АЛГОРИТМА ДЕЛЕНИЯ НАЧАЛО
-        * */
-
-
-        /*
-        * ПУНКТ 3 АЛГОРИТМА ДЕЛЕНИЯ НАЧАЛО
-        * */
-
 
         for (int j = m; j >= 0; j--) {
             long t = (long) (u.longDigit.get(j + n)) * (long) (base) + u.longDigit.get(j + n - 1);
@@ -280,13 +272,6 @@ public class longAr {
                 qt--;
                 rt += v.longDigit.get(n - 1);
             }
-        /*
-        * ПУНКТ 3 АЛГОРИТМА ДЕЛЕНИЯ КОНЕЦ
-        * */
-
-         /*
-        * ПУНКТ 4 АЛГОРИТМА ДЕЛЕНИЯ НАЧАЛО
-        * */
 
             longAr u2 = new longAr(new ArrayList<Integer>(u.longDigit.subList(j, j + n + 1)), true);
 
@@ -296,47 +281,41 @@ public class longAr {
             for (int i = 0; i < u.longDigit.size(); i++)
                 temp2.longDigit.add(0);
 
-
             for (int i = 0; i < temp.longDigit.size(); i++)
                 temp2.longDigit.set(i + j, temp.longDigit.get(i));
 
+            temp2.longDigit = removeZeros(temp2.longDigit);
 
+            u = u.subForDiv(temp2);//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            /*System.out.print("U after Sub :");*/
 
-            u = u.sub(temp2);
-
-
-            /*ШАГ 5*/
+            //if (u.k == -1)
+            //u.longDigit = removeZeros(u.longDigit);
             q.longDigit.set(j, qt);
 
             if (u.k == -1) {
 
-                longAr b = new longAr("10");
-                for (int i = 0; i <= n; i++)
-                    b = b.mul(base);
+                u.k = 0;
 
-                //u = b.add(u);
+                longAr b = new longAr("10");
+                for (int i = 0; i <= n; i++) {
+                    b = b.mul(base);
+                }
+
+                u = b.sub(u);
+                u.longDigit = removeZeros(u.longDigit);
 
                 k = 0;
-                int k = 0;
-
-
                 u2.changeSign(true);
-
-                qj = qj.sub(new longAr("1"));
-
                 q.longDigit.set(j, qt - 1);
 
                 longAr bn = new longAr("");
                 for (int i = 0; i < u.longDigit.size(); i++)
                     bn.longDigit.add(0);
 
-
-                /*формирование 6 шага*/
                 for (int i = 0; i < v.longDigit.size(); i++)
                     bn.longDigit.set(i + j, v.longDigit.get(i));
 
-
-                /*6 шаг*/
                 int count = u.longDigit.size();
                 u = u.add(bn);
                 if (count < u.longDigit.size())
@@ -355,12 +334,12 @@ public class longAr {
     }
 
     longAr getByMod(longAr a, longAr mod) {
+
         longAr temp = div(a, mod);
         temp = temp.mul(mod);
         temp = a.sub(temp);
         temp.longDigit = removeZeros(temp.longDigit);
         return temp;
-        //return a.sub(div(a,mod).mul(mod));
     }
 
 
@@ -371,31 +350,35 @@ public class longAr {
     }
 
     longAr modPow(longAr a, longAr mod) {
+
         longAr N = a;
         longAr Y = new longAr("1");
         longAr Z = this;
+
         boolean oneMoreTime = false;
-        if (a.longDigit.get(0) % 2 != 0)
-            oneMoreTime = true;
 
         while (true) {
             boolean isEvenN = isEven(N);
             N = div(N, new longAr("2"));
-            N.longDigit = removeZeros(N.longDigit);
+
             if (!isEvenN) {
                 Y = Z.mul(Y);
                 Y = Y.getByMod(Y, mod);
-
+                Z = Z.mul(Z);
+                Z = Z.getByMod(Z, mod);
                 if (N.longDigit.size() == 1 && N.longDigit.get(0) == 0)
                     if (oneMoreTime)
-                        return Y.mul(Z).getByMod(Y.mul(Z), mod);
+                        return Y.getByMod(Y.mul(Z), mod);
                     else return Y;
-            } else {
+
+            }
+            else {
                 Z = Z.mul(Z);
                 Z = Z.getByMod(Z, mod);
             }
         }
     }
+
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -406,42 +389,39 @@ public class longAr {
             System.out.println("Enter v:");
             String v = br.readLine();
 
-
-            /*System.out.println("Enter mod:");
+            System.out.println("Enter mod:");
             String mod = br.readLine();
-*/
-            if (v.equals("0")) {
+
+            /*if (v.equals("0")) {
                 System.out.println("Нельзя делить на ноль");
+
                 return;
-            }
+            }*/
+
             longAr a = new longAr(u);
             longAr b = new longAr(v);
             a.showOst = true;
             b.showOst = true;
 
 
-            System.out.println(a.sub(b));
 
 
-            ArrayList<Integer> result = div(a, b).longDigit;
-            String q = "";
-            removeZeros(result);
+            /*longAr res = (div(a, b));
+            if (res.longDigit.size() == 1 && res.longDigit.get(0) == 0) {
+                System.out.println("Частное = 0");
+                System.out.println("Остаток = " + u);
+            } else System.out.println("Частное = " + res);
+*/
 
-            System.out.print("Частное = ");
-            for (int i = result.size() - 1; i >= 0; i--) {
-                System.out.print(result.get(i));
-                q += result.get(i);
-            }
-            if (result.size() == 1 && result.get(0) == 0)
-                System.out.println("\nостаток = " + u);
-
-            /*a.showOst = false;
-            b.showOst=false;
+            a.showOst = false;
+            b.showOst = false;
             System.out.println("\nВозведение в степень по модулю: ");
-                if (mod.equals("1"))
+            if (mod.equals("1"))
                 System.out.println("0");
-            else
-                System.out.println(a.modPow(b, new longAr(mod)).toString());*/
+            if (b.longDigit.size() == 1 && b.longDigit.get(0) == 0) {
+                System.out.println("1");
+            } else
+                System.out.println(a.modPow(b, new longAr(mod)).toString());
         }
     }
 }
