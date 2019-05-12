@@ -60,10 +60,17 @@ public class Generator {
             longAr q = generateQ(k / 2);
             int sz = k - k / 2;
 
+            int counter = 0;
             for (longAr s = new longAr(longAr.pow(two, sz).toString());
                  s.compareTo(new longAr(longAr.pow(two, sz + 1).toString())) == -1
                          || s.toString().equals(longAr.pow(two, sz + 1).toString());
                  s = new longAr(s.add(two).toString())) {
+
+                counter++;
+                if (counter > 200) {
+                    System.out.println("Inpossible to find S parameter. New Q value will be generated");
+                    break;
+                }
 
                 longAr p = new longAr(new longAr(q.mul(s).toString()).add(one).toString());
                 //(2q+1)^2

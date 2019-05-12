@@ -489,6 +489,20 @@ public class longAr {
         return false;
     }
 
+    public static boolean isNumber(String s) {
+        char[] a = s.toCharArray();
+
+        if (a[0] == '0' && a.length > 1)
+            return false;
+
+        for (int i = 0; i < a.length; i++) {
+
+            if (a[i] < '0' || a[i] > '9')
+                return false;
+        }
+        return true;
+    }
+
     public longAr modPow(longAr a, longAr mod) {
 
         longAr N = a;
