@@ -1,6 +1,6 @@
 package CryptoMethods.second;
 
-import CryptoMethods.longAr;
+import CryptoMethods.longArr;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -19,12 +19,12 @@ public class Solution {
                 System.out.println("Введите p, p > 1:");
                 String p = reader.readLine();
 
-                if (!longAr.isNumber(p) || new longAr(p).compareTo(new longAr("1")) != 1)
+                if (!longArr.isNumber(p) || new longArr(p).compareTo(new longArr("1")) != 1)
                 {
                     throw new NumberFormatException();
                 }
 
-                if (!RSA.MillerRabinTest(new longAr(p), 130)) {
+                if (!RSA.MillerRabinTest(new longArr(p), 130)) {
                     System.out.println("Ошибка! Вы ввели составное p!");
                     return;
                 }
@@ -32,43 +32,48 @@ public class Solution {
                 System.out.println("Введите q, q > 2 (если p = 2, то введедите q > 3):");
                 String q = reader.readLine();
 
-                if (!longAr.isNumber(q) || new longAr(q).compareTo(new longAr("2")) != 1 || (p.equals("2") && new longAr(q).compareTo(new longAr("3")) != 1))
+                if(p.equals(q)) {
+                    System.out.println("P = Q!");
+                    return;
+                }
+
+                if (!longArr.isNumber(q) || new longArr(q).compareTo(new longArr("2")) != 1 || (p.equals("2") && new longArr(q).compareTo(new longArr("3")) != 1))
                 {
                     throw new NumberFormatException();
                 }
 
-                if (!RSA.MillerRabinTest(new longAr(q), 130)) {
+                if (!RSA.MillerRabinTest(new longArr(q), 130)) {
                     System.out.println("Ошибка! Вы ввели составное q!");
                     return;
                 }
 
-                RSA.generate(new longAr(p), new longAr(q));
+                RSA.generate(new longArr(p), new longArr(q));
             }
             else if (k == 1) {
                 System.out.println("Введите e:");
                 String e = reader.readLine();
-                if (!longAr.isNumber(e)) {
+                if (!longArr.isNumber(e)) {
                     throw new NumberFormatException();
                 }
                 System.out.println("Введите n:");
                 String n = reader.readLine();
-                if (!longAr.isNumber(n)) {
+                if (!longArr.isNumber(n)) {
                     throw new NumberFormatException();
                 }
-                RSA.encryption(new longAr(e), new longAr(n));
+                RSA.encryption(new longArr(e), new longArr(n));
             }
             else {
                 System.out.println("Введите d:");
                 String d = reader.readLine();
-                if (!longAr.isNumber(d)) {
+                if (!longArr.isNumber(d)) {
                     throw new NumberFormatException();
                 }
                 System.out.println("Введите n:");
                 String n = reader.readLine();
-                if (!longAr.isNumber(n)) {
+                if (!longArr.isNumber(n)) {
                     throw new NumberFormatException();
                 }
-                RSA.decryption(new longAr(d), new longAr(n));
+                RSA.decryption(new longArr(d), new longArr(n));
             }
 
         }

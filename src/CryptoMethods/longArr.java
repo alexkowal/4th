@@ -1,8 +1,5 @@
 package CryptoMethods;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 public class longArr {
@@ -14,7 +11,7 @@ public class longArr {
     private String str = "";
 
 
-    longArr(String str) {
+    public longArr(String str) {
         this.str = str;
         for (int i = str.length(); i > 0; i -= lenghtOfBase) {
             if (i < lenghtOfBase)
@@ -24,7 +21,7 @@ public class longArr {
         }
     }
 
-    public String toStr() {
+    public String toStr () {
         String res = "";
         int k = this.longDigit.size();
         if (k > 1) {
@@ -89,7 +86,7 @@ public class longArr {
         return a;
     }
 
-    longArr add(longArr a) {
+    public longArr add(longArr a) {
         int k = 0;
         ArrayList<Integer> res = new ArrayList<>();
         for (int i = 0; i < Math.max(a.longDigit.size(), this.longDigit.size()); i++) {
@@ -105,7 +102,7 @@ public class longArr {
         return new longArr(res);
     }
 
-    longArr sub(longArr a) {
+    public longArr sub(longArr a) {
         k = 0;
 
         int nMax = Math.max(a.longDigit.size(), this.longDigit.size());
@@ -155,7 +152,7 @@ public class longArr {
         return new longArr(delNull(ans));
     }
 
-    longArr mul(longArr a) {
+    public longArr mul(longArr a) {
         longArr ans = new longArr("0");
         for (int i = 0; i < this.longDigit.size(); i++) {
             longArr temp = a.mul(this.longDigit.get(i));
@@ -166,7 +163,7 @@ public class longArr {
         return ans;
     }
 
-    longArr div(int v) {
+    longArr  div(int v) {
         int num = this.longDigit.size() - 1;
         int ost = 0;
         longArr res = new longArr("");
@@ -350,9 +347,7 @@ public class longArr {
 
     public static longArr modPow(longArr x, longArr n, longArr m) {
 
-        // Z - x, N - n, Y - 1.
-
-        longArr Y = new longArr("1");
+        longArr cnt = new longArr("1");
 
         if (n.str.equals("0"))
             return new longArr("1");
@@ -362,19 +357,17 @@ public class longArr {
                 break;
 
             longArr a = new longArr(n.mod(2).toStr());
-
             if (a.str.equals("0")) {
                 n = new longArr(n.div(2).toStr());
                 x = new longArr(x.mul(x).toStr());
                 x = new longArr(mod(x, m).toStr());
             } else {
                 n = new longArr(n.sub(new longArr("1")).toStr());
-                Y = new longArr(Y.mul(x).toStr());
-                Y = new longArr(mod(Y, m).toStr());
+                cnt = new longArr(cnt.mul(x).toStr());
+                cnt = new longArr(mod(cnt, m).toStr());
             }
         }
-        return mod(Y, m);
-
+        return mod(cnt, m);
     }
 
     public static longArr pow(longArr x, int n) {
@@ -400,7 +393,7 @@ public class longArr {
         return cnt;
     }
 
-    static boolean isNumber(String s) {
+    public static boolean isNumber(String s) {
         char[] a = s.toCharArray();
 
         if (a[0] == '0' && a.length > 1)
@@ -408,40 +401,9 @@ public class longArr {
 
         for (int i = 0; i < a.length; i++) {
 
-            if (a[i] < '0' || a[i] > '9')
+            if (a[i] < '0' || a[i] >'9')
                 return false;
         }
         return true;
-    }
-
-    public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        while (true) {
-            System.out.println();
-            System.out.println("Enter u:");
-            String u = br.readLine();
-            System.out.println("Enter v:");
-            String v = br.readLine();
-
-            System.out.println("Enter mod:");
-            String mod = br.readLine();
-
-
-            longArr a = new longArr(u);
-            longArr b = new longArr(v);
-            System.out.println("\nВозведение в степень по модулю: ");
-            if (mod.equals("0")) {
-                System.out.println("Mod is null");
-                return;
-            }
-            if (mod.equals("1")) {
-                System.out.println("0");
-
-                System.out.println();
-            } else if (b.longDigit.size() == 1 && b.longDigit.get(0) == 0) {
-                System.out.println("1");
-            } else
-                System.out.println(modPow(a,b, new longArr(mod)).toStr());
-        }
     }
 }

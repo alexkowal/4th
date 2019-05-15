@@ -43,7 +43,7 @@ public class Generator {
 
         while (true) {
             if (!longAr.mod(resN, two).toString().equals("0")) {
-                if (MillerRabinTest(resN, k)) {
+                if (MillerRabinTest(resN, 5)) {
                     return new longAr(resN.toString());
 
                 } else resN = resN.add(one);
@@ -67,12 +67,14 @@ public class Generator {
                  s = new longAr(s.add(two).toString())) {
 
                 counter++;
-                if (counter > 200) {
+                System.out.println(counter);
+                if (counter >= 100) {
                     System.out.println("Inpossible to find S parameter. New Q value will be generated");
                     break;
                 }
 
                 longAr p = new longAr(new longAr(q.mul(s).toString()).add(one).toString());
+
                 //(2q+1)^2
                 longAr temp = new longAr(longAr.pow(new longAr(new longAr(two.mul(q).toString()).add(one).toString()), 2).toString());
                 //2^s mod p

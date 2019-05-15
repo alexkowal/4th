@@ -1,6 +1,6 @@
 package CryptoMethods.second;
 
-import CryptoMethods.longAr;
+import CryptoMethods.longArr;
 
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.util.*;
 
 public class RSA {
-    private  static Map<Character, Integer> alph = new TreeMap<>();
+    private static Map<Character, Integer> alph = new TreeMap<>();
 
     static {
         alph.put('0', 18);
@@ -95,9 +95,9 @@ public class RSA {
         alph.put('Я', 1458);
     }
 
-    public static longAr rnd(int k) {
+    public static longArr rnd(int k) {
 
-        longAr resN = new longAr("0");
+        longArr resN = new longArr("0");
         ArrayList<Boolean> bits = new ArrayList<>();
         Random brand = new Random();
         for (int i = 0; i < k; i++) {
@@ -106,77 +106,80 @@ public class RSA {
 
         for (int i = 0; i < bits.size(); i++) {
             if (bits.get(i)) {
-                resN = resN.add(longAr.pow(new longAr("2"), i));
+                resN = resN.add(longArr.pow(new longArr("2"), i));
             }
         }
         return resN;
     }
 
-    public static void generate(longAr p, longAr q) {
+    public static void generate(longArr p, longArr q) throws IOException {
 
+        FileWriter fw = new FileWriter("openKey.txt");
         try (FileWriter writer = new FileWriter("keys.txt")) {
-            longAr n = new longAr(p.mul(q).toString());
-            System.out.println("n = " + n.toString());
-            longAr fi;
-//            if (p.toString().equals(q.toString())) {
-//                fi = new longAr(new longAr(longAr.pow(p, 2).toString()).sub(p).toString());
-//            }
-//            else {
-            fi = new longAr(p.sub(new longAr("1")).toString());
-            fi = new longAr(fi.mul(new longAr(q.sub(new longAr("1")).toString())).toString());
-            // }
-            System.out.println("fi = (q - 1) * (p - 1) =  " + fi.toString());
+            longArr n = new longArr(p.mul(q).toStr());
+            System.out.println("n = " + n.toStr());
+            longArr fi;
 
-            writer.write("n: " + n.toString() + "\n");
+            if(p.equals(q))
+            {
+                fi = p.mul(p);
+                fi = fi.sub(p);
+                System.out.println("fi = (p * p - p) =  " + fi.toStr());
+            }
+            else {
+                fi = new longArr(p.sub(new longArr("1")).toStr());
+                fi = new longArr(fi.mul(new longArr(q.sub(new longArr("1")).toStr())).toStr());
+                System.out.println("fi = (p - 1) * (q - 1) =  " + fi.toStr());
+            }
 
-            longAr e;
-            longAr d;
+            writer.write("n: " + n.toStr() + "\n");
+            fw.write("n: " + n.toStr() + "\n");
+
+            longArr e;
+            longArr d;
             int r;
 
             while (true) {
                 Random random = new Random();
                 r = 2 + random.nextInt(128);
                 e = rnd(r);
-                if (gcd(e, fi).toString().equals("1") && e.compareTo(new longAr("1")) == 1 && e.compareTo(fi) == -1)
+                if (gcd(e, fi).toStr().equals("1") && e.compareTo(new longArr("1")) == 1 && e.compareTo(fi) == -1)
                     break;
             }
-
-            writer.write("e: " + e.toString() + "\n");
-
-            System.out.println("e = " + e.toString());
+            //writer.write("e: " + e.toStr() + "\n");
+            fw.write("e: " + e.toStr() + "\n");
+            fw.close();
+            System.out.println("e = " + e.toStr());
             d = RSA.modInverse(e, fi);
 
-            System.out.println("e * d (mod fi) = " + longAr.modPow(new longAr(e.mul(d).toString()), new longAr("1"), fi).toString());
+            System.out.println("e * d (mod fi) = " + longArr.modPow(new longArr(e.mul(d).toStr()), new longArr("1"), fi).toStr());
 
-            writer.write("d: " + d.toString() + "\n");
+            writer.write("d: " + d.toStr() + "\n");
 
-            System.out.println("d = " + d.toString());
-        }
-        catch (IOException e) {
+            System.out.println("d = " + d.toStr());
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public static longAr modInverse(longAr a, longAr m)
-    {
-        longAr m0 = m;
-        longAr y = new longAr("0");
-        longAr x = new longAr("1");
+    public static longArr modInverse(longArr a, longArr m) {
+        longArr m0 = m;
+        longArr y = new longArr("0");
+        longArr x = new longArr("1");
 
-        if (m.toString().equals("1"))
-            return new longAr("0");
+        if (m.toStr().equals("1"))
+            return new longArr("0");
 
         boolean fy = true;
         boolean ft = true;
         boolean fx = true;
 
-        while (a.compareTo(new longAr("1")) == 1)
-        {
-            longAr q = new longAr(longAr.div(a, m).toString());
+        while (a.compareTo(new longArr("1")) == 1) {
+            longArr q = new longArr(longArr.div(a, m).toStr());
 
-            longAr t = m;
+            longArr t = m;
 
-            m = new longAr(longAr.mod(a, m).toString());
+            m = new longArr(longArr.mod(a, m).toStr());
 
             a = t;
 
@@ -186,67 +189,55 @@ public class RSA {
                 ft = false;
             else ft = true;
 
-            if (x.compareTo(new longAr(q.mul(y).toString())) == 1 && fy && fx) {
-                y = new longAr(x.sub(new longAr(q.mul(y).toString())).toString());
+            if (x.compareTo(new longArr(q.mul(y).toStr())) == 1 && fy && fx) {
+                y = new longArr(x.sub(new longArr(q.mul(y).toStr())).toStr());
                 fy = true;
-            }
-
-            else if (x.toString().equals(q.mul(y).toString()) && fy && fx) {
-                y = new longAr("0");
+            } else if (x.toStr().equals(q.mul(y).toStr()) && fy && fx) {
+                y = new longArr("0");
                 fy = true;
-            }
+            } else if (x.compareTo(new longArr(q.mul(y).toStr())) == -1 && fy && fx) {
 
-            else if (x.compareTo(new longAr(q.mul(y).toString())) == -1 && fy && fx) {
-
-                y = new longAr((new longAr(q.mul(y).toString())).sub(x).toString());
+                y = new longArr((new longArr(q.mul(y).toStr())).sub(x).toStr());
                 fy = false;
 
-            }
-            else if (x.compareTo(new longAr(q.mul(y).toString())) == 1 && !fy && !fx) {
-                y = new longAr(x.sub(new longAr(q.mul(y).toString())).toString());
+            } else if (x.compareTo(new longArr(q.mul(y).toStr())) == 1 && !fy && !fx) {
+                y = new longArr(x.sub(new longArr(q.mul(y).toStr())).toStr());
                 fy = false;
-            }
-
-            else if (x.toString().equals(q.mul(y).toString()) && !fy && !fx) {
-                y = new longAr("0");
+            } else if (x.toStr().equals(q.mul(y).toStr()) && !fy && !fx) {
+                y = new longArr("0");
                 fy = true;
-            }
-
-            else if (x.compareTo(new longAr(q.mul(y).toString())) == -1 && !fy && !fx) {
-                y = new longAr((new longAr(q.mul(y).toString())).sub(x).toString());
+            } else if (x.compareTo(new longArr(q.mul(y).toStr())) == -1 && !fy && !fx) {
+                y = new longArr((new longArr(q.mul(y).toStr())).sub(x).toStr());
                 fy = true;
-            }
-            else if (!fx && fy) {
-                y = new longAr(x.add(new longAr(q.mul(y).toString())).toString());
+            } else if (!fx && fy) {
+                y = new longArr(x.add(new longArr(q.mul(y).toStr())).toStr());
                 fy = false;
-            }
-            else if (fx && !fy) {
-                y = new longAr(x.add(new longAr(q.mul(y).toString())).toString());
+            } else if (fx && !fy) {
+                y = new longArr(x.add(new longArr(q.mul(y).toStr())).toStr());
                 fy = true;
             }
 
             x = t;
             if (!ft) {
                 fx = false;
-            }
-            else fx = true;
+            } else fx = true;
         }
 
         if (!fx)
-            x = new longAr(m0.sub(x).toString());
+            x = new longArr(m0.sub(x).toStr());
 
         return x;
     }
 
-    public static ArrayList<longAr> convert(longAr n) {
+    public static ArrayList<longArr> convert(longArr n) {
         String s = "";
         String mess = "";
         try (FileReader reader = new FileReader("message.txt");
-             Scanner scanner = new Scanner(reader)){
+             Scanner scanner = new Scanner(reader)) {
             while (scanner.hasNext()) {
                 char[] ch = scanner.nextLine().toCharArray();
-                for (Character character: ch)
-                    for (Map.Entry<Character, Integer> pair: alph.entrySet()) {
+                for (Character character : ch)
+                    for (Map.Entry<Character, Integer> pair : alph.entrySet()) {
                         if (pair.getKey().equals(character)) {
                             System.out.println("Коды: " + pair.getKey() + " " + pair.getValue());
                             mess += pair.getKey();
@@ -256,161 +247,153 @@ public class RSA {
                     }
             }
             System.out.println();
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
-        ArrayList<longAr> list = new ArrayList<>();
+        ArrayList<longArr> list = new ArrayList<>();
         System.out.println("Сообщение: " + mess);
-        System.out.println("Результирующее число: " + s);
-        longAr number = new longAr(s);
+        System.out.println("Результирующая строка: " + s);
+        longArr number = new longArr(s);
         if (number.compareTo(n) != -1) {
             while (!s.equals("")) {
-                longAr maxx = new longAr(s.substring(0, 1));
+                longArr maxx = new longArr(s.substring(0, 1));
                 for (int i = 1; i < s.length() + 1; i++) {
-                    if (new longAr(s.substring(0, i)).compareTo(n) != -1) {
+                    if (new longArr(s.substring(0, i)).compareTo(n) != -1) {
                         s = s.substring(i - 1);
                         break;
                     }
-                    if (maxx.compareTo(new longAr(s.substring(0, i))) == -1 && new longAr(s.substring(0, i)).compareTo(n) == -1)
-                        maxx = new longAr(s.substring(0, i));
+                    if (maxx.compareTo(new longArr(s.substring(0, i))) == -1 && new longArr(s.substring(0, i)).compareTo(n) == -1)
+                        maxx = new longArr(s.substring(0, i));
                     if (i == s.length()) {
                         s = "";
                     }
                 }
-                System.out.println(maxx.toString());
+                System.out.println(maxx.toStr());
                 list.add(maxx);
             }
-        }
-        else {
+        } else {
             list.add(number);
         }
         return list;
     }
 
-    public static longAr gcd(longAr a, longAr b) {
+    public static longArr gcd(longArr a, longArr b) {
 
-        if (a.toString().equals("0")) return b;
-        return gcd(new longAr(longAr.mod(b, a).toString()), a);
+        if (a.toStr().equals("0")) return b;
+        return gcd(new longArr(longArr.mod(b, a).toStr()), a);
     }
 
-    public static void encryption(longAr e, longAr n) {
+    public static void encryption(longArr e, longArr n) {
         try (FileWriter writer = new FileWriter("encrypt.txt")) {
 
-            ArrayList<longAr> mess = RSA.convert(n);
+            ArrayList<longArr> mess = RSA.convert(n);
 
-            for (longAr longAr : mess) {
-                longAr temp = new longAr(longAr.modPow(longAr, e, n).toString());
-                writer.write(temp.toString() + "\n");
+            for (longArr numbers : mess) {
+                longArr temp = new longArr(longArr.modPow(numbers, e, n).toStr());
+                writer.write(temp.toStr() + "\n");
             }
-        }
-        catch (IOException ex) {
+        } catch (IOException ex) {
             ex.printStackTrace();
         }
     }
 
-    public static void decryption(longAr d, longAr n) {
+    public static void decryption(longArr d, longArr n) {
         String s = "";
         System.out.println();
         try (FileReader fileReader = new FileReader("encrypt.txt");
              Scanner scanner = new Scanner(fileReader);
              FileWriter fileWriter = new FileWriter("decrypt.txt");
-             FileWriter fileWriter2 = new FileWriter("decryptBlocks.txt")){
+             FileWriter fileWriter2 = new FileWriter("decryptBlocks.txt")) {
             while (scanner.hasNextLine()) {
-                longAr a = new longAr(scanner.nextLine());
-                longAr temp = new longAr(longAr.modPow(a, d, n).toString());
-                fileWriter2.write(temp.toString() + "\n");
-                s += temp.toString();
+                longArr a = new longArr(scanner.nextLine());
+                longArr temp = new longArr(longArr.modPow(a, d, n).toStr());
+                fileWriter2.write(temp.toStr() + "\n");
+                s += temp.toStr();
             }
 
-            System.out.println("Результирующее число: " + s);
+            System.out.println("Результирующая строка: " + s);
 
             String[] strings = s.split("8");
             for (int i = 0; i < strings.length; i++) {
                 strings[i] = strings[i] + "8";
             }
-            for (String str: strings)
-                for (Map.Entry<Character, Integer> pair: alph.entrySet()) {
+            for (String str : strings)
+                for (Map.Entry<Character, Integer> pair : alph.entrySet()) {
                     if (pair.getValue() == Integer.parseInt(str)) {
                         System.out.println("Коды: " + pair.getKey() + " " + pair.getValue());
                         fileWriter.write(pair.getKey());
                         break;
                     }
                 }
-        }
-        catch (IOException ex) {
+        } catch (IOException ex) {
             ex.printStackTrace();
         }
     }
 
-    static int bits(longAr n) {
+    static int bits(longArr n) {
         int k = 0;
-        while (!n.toString().equals("0")) {
-            n = longAr.div(n, new longAr("2"));
+        while (!n.toStr().equals("0")) {
+            n = longArr.div(n, new longArr("2"));
             k++;
         }
         return k;
     }
 
-    static boolean MillerRabinTest(longAr n, int k) {
+    static boolean MillerRabinTest(longArr n, int k) {
 
-        if (n.toString().equals("2") || n.toString().equals("3"))
+        if (n.toStr().equals("2") || n.toStr().equals("3"))
             return true;
 
-        if (n.compareTo(new longAr("2")) == - 1 || longAr.mod(n, new longAr("2")).toString().equals("0"))
+        if (n.compareTo(new longArr("2")) == -1 || longArr.mod(n, new longArr("2")).toStr().equals("0"))
             return false;
 
-        longAr t = new longAr(n.sub(new longAr("1")).toString());
+        longArr t = new longArr(n.sub(new longArr("1")).toStr());
 
         long s = 0;
 
-        while (longAr.mod(t, new longAr("2")).toString().equals("0"))
-        {
-            t = new longAr(longAr.div(t, new longAr("2")).toString());
+        while (longArr.mod(t, new longArr("2")).toStr().equals("0")) {
+            t = new longArr(longArr.div(t, new longArr("2")).toStr());
             s++;
         }
 
-        for (int i = 0; i < k; i++)
-        {
+        for (int i = 0; i < k; i++) {
             byte[] _a = new byte[RSA.bits(n)];
 
-            longAr a;
+            longArr a;
 
-            do
-            {
+            do {
                 Random rng = new Random();
                 for (int j = 0; j < _a.length; j++)
-                    _a[j] = rng.nextBoolean() ? (byte)1: (byte)0;
+                    _a[j] = rng.nextBoolean() ? (byte) 1 : (byte) 0;
 
-                a = new longAr("0");
+                a = new longArr("0");
 
                 for (int j = 0; j < _a.length; j++) {
                     if (_a[j] == 1) {
-                        a = a.add(longAr.pow(new longAr("2"), j));
+                        a = a.add(longArr.pow(new longArr("2"), j));
                     }
                 }
             }
 
-            while (a.compareTo(new longAr("2")) == -1 || (a.compareTo(new longAr(n.sub(new longAr("2")).toString())) == 1 || a.toString().equals(n.sub(new longAr("2")).toString())));
+            while (a.compareTo(new longArr("2")) == -1 || (a.compareTo(new longArr(n.sub(new longArr("2")).toStr())) == 1 || a.toStr().equals(n.sub(new longArr("2")).toStr())));
 
-            longAr x = new longAr(longAr.modPow(a, t, n).toString());
+            longArr x = new longArr(longArr.modPow(a, t, n).toStr());
 
-            if (x.toString().equals("1") || x.toString().equals(n.sub(new longAr("1")).toString()))
+            if (x.toStr().equals("1") || x.toStr().equals(n.sub(new longArr("1")).toStr()))
                 continue;
 
-            for (int r = 1; r < s; r++)
-            {
-                x = new longAr(longAr.modPow(x, new longAr("2"), n).toString());
+            for (int r = 1; r < s; r++) {
+                x = new longArr(longArr.modPow(x, new longArr("2"), n).toStr());
 
-                if (x.toString().equals("1"))
+                if (x.toStr().equals("1"))
                     return false;
 
-                if (x.toString().equals(n.sub(new longAr("1")).toString()))
+                if (x.toStr().equals(n.sub(new longArr("1")).toStr()))
                     break;
             }
 
-            if (!x.toString().equals(n.sub(new longAr("1")).toString()))
+            if (!x.toStr().equals(n.sub(new longArr("1")).toStr()))
                 return false;
         }
 
