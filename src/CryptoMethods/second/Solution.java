@@ -29,7 +29,7 @@ public class Solution {
                     return;
                 }
 
-                System.out.println("Введите q, q > 2 (если p = 2, то введедите q > 3):");
+                System.out.println("Введите q, q != p,  q > 2 (если p = 2, то введедите q > 3):");
                 String q = reader.readLine();
 
                 if(p.equals(q)) {

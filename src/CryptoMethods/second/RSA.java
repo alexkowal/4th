@@ -93,6 +93,59 @@ public class RSA {
         alph.put('Э', 1438);
         alph.put('Ю', 1448);
         alph.put('Я', 1458);
+        alph.put('a', 1468);
+        alph.put('b', 1478);
+        alph.put('c', 1518);
+        alph.put('d', 1528);
+        alph.put('e', 1538);
+        alph.put('f', 1548);
+        alph.put('g', 1558);
+        alph.put('h', 1568);
+        alph.put('i', 1578);
+        alph.put('j', 1618);
+        alph.put('k', 1628);
+        alph.put('l', 1638);
+        alph.put('m', 1648);
+        alph.put('n', 1658);
+        alph.put('o', 1668);
+        alph.put('p', 1678);
+        alph.put('q', 1718);
+        alph.put('r', 1728);
+        alph.put('s', 1738);
+        alph.put('t', 1748);
+        alph.put('u', 1758);
+        alph.put('v', 1768);
+        alph.put('w', 1778);
+        alph.put('x', 1918);
+        alph.put('y', 1928);
+        alph.put('z', 1938);
+        alph.put('A', 1948);
+        alph.put('B', 1958);
+        alph.put('C', 1968);
+        alph.put('D', 1978);
+        alph.put('E', 2118);
+        alph.put('F', 2128);
+        alph.put('G', 2138);
+        alph.put('H', 2148);
+        alph.put('I', 2158);
+        alph.put('J', 2168);
+        alph.put('K', 2178);
+        alph.put('L', 2218);
+        alph.put('M', 2228);
+        alph.put('N', 2238);
+        alph.put('O', 2248);
+        alph.put('P', 2258);
+        alph.put('Q', 2268);
+        alph.put('R', 2278);
+        alph.put('S', 2318);
+        alph.put('T', 2328);
+        alph.put('U', 2338);
+        alph.put('V', 2348);
+        alph.put('W', 2358);
+        alph.put('X', 2368);
+        alph.put('Y', 2378);
+        alph.put('Z', 2418);
+
     }
 
     public static longArr rnd(int k) {
@@ -120,13 +173,11 @@ public class RSA {
             System.out.println("n = " + n.toStr());
             longArr fi;
 
-            if(p.equals(q))
-            {
+            if (p.equals(q)) {
                 fi = p.mul(p);
                 fi = fi.sub(p);
                 System.out.println("fi = (p * p - p) =  " + fi.toStr());
-            }
-            else {
+            } else {
                 fi = new longArr(p.sub(new longArr("1")).toStr());
                 fi = new longArr(fi.mul(new longArr(q.sub(new longArr("1")).toStr())).toStr());
                 System.out.println("fi = (p - 1) * (q - 1) =  " + fi.toStr());
@@ -150,7 +201,8 @@ public class RSA {
             fw.write("e: " + e.toStr() + "\n");
             fw.close();
             System.out.println("e = " + e.toStr());
-            d = RSA.modInverse(e, fi);
+            d = RSA.modMultipInverse(e, fi);
+            //d = RSA.naiveModMultipInverse(e, fi);
 
             System.out.println("e * d (mod fi) = " + longArr.modPow(new longArr(e.mul(d).toStr()), new longArr("1"), fi).toStr());
 
@@ -162,69 +214,110 @@ public class RSA {
         }
     }
 
-    public static longArr modInverse(longArr a, longArr m) {
-        longArr m0 = m;
+    public static longArr naiveModMultipInverse(longArr a, longArr m) {
+        a = longArr.mod(a, m);
+        longArr i = new longArr("0");
+
+        while (i.compareTo(m) != 1) {
+            longArr tmp = a.mul(i);
+            tmp = longArr.mod(tmp, m);
+            if (tmp.equals(new longArr("1")))
+                return i;
+            i = i.add(new longArr("1"));
+        }
+
+        return new longArr("1");
+    }
+
+
+    static void setY(longArr x, longArr q, longArr y, Boolean signX, Boolean signY) {
+        if (x.compareTo(new longArr(q.mul(y).toStr())) == 1 && signY && signX) {
+            y = new longArr(x.sub(new longArr(q.mul(y).toStr())).toStr());
+            signY = true;
+        } else if (x.toStr().equals(q.mul(y).toStr()) && signY && signX) {
+            y = new longArr("0");
+            signY = true;
+        } else if (x.compareTo(new longArr(q.mul(y).toStr())) == -1 && signY && signX) {
+            y = new longArr((new longArr(q.mul(y).toStr())).sub(x).toStr());
+            signY = false;
+
+        } else if (x.compareTo(new longArr(q.mul(y).toStr())) == 1 && !signY && !signX) {
+            y = new longArr(x.sub(new longArr(q.mul(y).toStr())).toStr());
+            signY = false;
+        } else if (x.toStr().equals(q.mul(y).toStr()) && !signY && !signX) {
+            y = new longArr("0");
+            signY = true;
+        } else if (x.compareTo(new longArr(q.mul(y).toStr())) == -1 && !signY && !signX) {
+            y = new longArr((new longArr(q.mul(y).toStr())).sub(x).toStr());
+            signY = true;
+        } else if (!signX && signY) {
+            y = new longArr(x.add(new longArr(q.mul(y).toStr())).toStr());
+            signY = false;
+        } else if (signX && !signY) {
+            y = new longArr(x.add(new longArr(q.mul(y).toStr())).toStr());
+            signY = true;
+        }
+    }
+
+    public static longArr modMultipInverse(longArr a, longArr m) {
+        longArr startMValue = m;
         longArr y = new longArr("0");
         longArr x = new longArr("1");
 
         if (m.toStr().equals("1"))
             return new longArr("0");
 
-        boolean fy = true;
-        boolean ft = true;
-        boolean fx = true;
+        Boolean signY = true;
+        Boolean signT = true;
+        Boolean signX = true;
 
         while (a.compareTo(new longArr("1")) == 1) {
             longArr q = new longArr(longArr.div(a, m).toStr());
-
             longArr t = m;
-
-            m = new longArr(longArr.mod(a, m).toStr());
-
+            m = new longArr(longArr.mod(a, m).toStr());// div mod
             a = t;
-
             t = y;
+            if (!signY)
+                signT = false;
+            else signT = true;
 
-            if (!fy)
-                ft = false;
-            else ft = true;
+            //y =  x - q * y
 
-            if (x.compareTo(new longArr(q.mul(y).toStr())) == 1 && fy && fx) {
+            if (x.compareTo(new longArr(q.mul(y).toStr())) == 1 && signY && signX) {
                 y = new longArr(x.sub(new longArr(q.mul(y).toStr())).toStr());
-                fy = true;
-            } else if (x.toStr().equals(q.mul(y).toStr()) && fy && fx) {
+                signY = true;
+            } else if (x.toStr().equals(q.mul(y).toStr()) && signY && signX) {
                 y = new longArr("0");
-                fy = true;
-            } else if (x.compareTo(new longArr(q.mul(y).toStr())) == -1 && fy && fx) {
-
+                signY = true;
+            } else if (x.compareTo(new longArr(q.mul(y).toStr())) == -1 && signY && signX) {
                 y = new longArr((new longArr(q.mul(y).toStr())).sub(x).toStr());
-                fy = false;
+                signY = false;
 
-            } else if (x.compareTo(new longArr(q.mul(y).toStr())) == 1 && !fy && !fx) {
+            } else if (x.compareTo(new longArr(q.mul(y).toStr())) == 1 && !signY && !signX) {
                 y = new longArr(x.sub(new longArr(q.mul(y).toStr())).toStr());
-                fy = false;
-            } else if (x.toStr().equals(q.mul(y).toStr()) && !fy && !fx) {
+                signY = false;
+            } else if (x.toStr().equals(q.mul(y).toStr()) && !signY && !signX) {
                 y = new longArr("0");
-                fy = true;
-            } else if (x.compareTo(new longArr(q.mul(y).toStr())) == -1 && !fy && !fx) {
+                signY = true;
+            } else if (x.compareTo(new longArr(q.mul(y).toStr())) == -1 && !signY && !signX) {
                 y = new longArr((new longArr(q.mul(y).toStr())).sub(x).toStr());
-                fy = true;
-            } else if (!fx && fy) {
+                signY = true;
+            } else if (!signX && signY) {
                 y = new longArr(x.add(new longArr(q.mul(y).toStr())).toStr());
-                fy = false;
-            } else if (fx && !fy) {
+                signY = false;
+            } else if (signX && !signY) {
                 y = new longArr(x.add(new longArr(q.mul(y).toStr())).toStr());
-                fy = true;
+                signY = true;
             }
-
             x = t;
-            if (!ft) {
-                fx = false;
-            } else fx = true;
-        }
 
-        if (!fx)
-            x = new longArr(m0.sub(x).toStr());
+            if (!signT) {
+                signX = false;
+            } else signX = true;
+        }
+        //make X positive
+        if (!signX)
+            x = new longArr(startMValue.sub(x).toStr());
 
         return x;
     }
@@ -331,7 +424,7 @@ public class RSA {
         }
     }
 
-    static int bits(longArr n) {
+    static int countOfBits(longArr n) {
         int k = 0;
         while (!n.toStr().equals("0")) {
             n = longArr.div(n, new longArr("2"));
@@ -358,7 +451,7 @@ public class RSA {
         }
 
         for (int i = 0; i < k; i++) {
-            byte[] _a = new byte[RSA.bits(n)];
+            byte[] _a = new byte[RSA.countOfBits(n)];
 
             longArr a;
 
